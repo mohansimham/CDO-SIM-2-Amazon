@@ -1,0 +1,1640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CDO SIM 2 — Amazon | CXO Simulabs</title>
+<meta name="description" content="Master data flywheel strategy and platform data architecture through Amazon-inspired decisions. A CDO Track simulation by CXO Simulabs.">
+<link rel="canonical" href="https://mohansimham.github.io/CDO-SIM-2-Amazon/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="CDO SIM 2 — Amazon | CXO Simulabs">
+<meta property="og:description" content="Master data flywheel strategy and platform data architecture through Amazon-inspired decisions. Test your data strategy instincts through 10 real scenarios.">
+<meta property="og:url" content="https://mohansimham.github.io/CDO-SIM-2-Amazon/">
+<meta property="og:site_name" content="CXO Simulabs">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CDO SIM 2 — Amazon | CXO Simulabs">
+<meta name="twitter:description" content="Master data flywheel strategy and platform data architecture through Amazon-inspired decisions. Test your data strategy instincts through 10 real scenarios.">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"CDO SIM 2 — Amazon","url":"https://mohansimham.github.io/CDO-SIM-2-Amazon/","description":"Master data flywheel strategy and platform data architecture through Amazon-inspired decisions. A CDO Track simulation by CXO Simulabs.","applicationCategory":"Education","provider":{"@type":"Organization","name":"CXO Simulabs","url":"https://www.cxosimulabs.com"}}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z4J0M6TE3E"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Z4J0M6TE3E');</script>
+<style>
+:root {
+  --navy:#1a1a2e; --navy-mid:#16213e; --red:#e23744;
+  --accent:#B45309; --accent-light:#fef3e2;
+  --white:#fff; --light:#f7f7f9; --border:#e5e7eb;
+  --text:#1f2937; --muted:#6b7280;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:var(--light);color:var(--text);line-height:1.6;}
+.phase{display:none;}
+.phase.active{display:block;}
+
+/* NAV */
+.nav{background:var(--navy);padding:0 32px;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+.nav-logo{color:#fff;font-weight:800;font-size:1.1em;letter-spacing:.5px;}
+.nav-logo span{color:var(--red);}
+.nav-track{background:rgba(180,83,9,.15);border:1px solid rgba(180,83,9,.3);color:#c9863e;padding:4px 12px;border-radius:20px;font-size:.75em;font-weight:600;letter-spacing:1px;text-transform:uppercase;}
+.nav-sims{display:flex;gap:4px;}
+.nav-sim{color:#778;text-decoration:none;font-size:.78em;padding:4px 10px;border-radius:6px;transition:all .2s;}
+.nav-sim:hover{color:#fff;background:rgba(255,255,255,.08);}
+.nav-sim.current{color:var(--accent);font-weight:600;}
+
+/* HERO BAND */
+.sim-band{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);padding:48px 32px 40px;text-align:center;}
+.sim-band .eyebrow{display:inline-block;background:rgba(180,83,9,.15);border:1px solid rgba(180,83,9,.35);color:#c9863e;padding:5px 16px;border-radius:20px;font-size:.75em;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;margin-bottom:16px;}
+.sim-band h1{color:#fff;font-size:2em;font-weight:900;margin-bottom:8px;}
+.sim-band p{color:#778899;font-size:1em;max-width:520px;margin:0 auto;}
+
+/* CARD */
+.card{background:var(--white);border-radius:14px;padding:32px;box-shadow:0 2px 12px rgba(0,0,0,.06);max-width:620px;margin:0 auto;}
+.center-wrap{padding:40px 24px;}
+
+/* FORM */
+.form-group{margin-bottom:18px;}
+.form-group label{display:block;font-size:.85em;font-weight:600;color:var(--text);margin-bottom:6px;}
+.form-group input{width:100%;padding:12px 14px;border:2px solid var(--border);border-radius:8px;font-size:.95em;font-family:'Inter',sans-serif;transition:border-color .2s;outline:none;}
+.form-group input:focus{border-color:var(--accent);}
+.form-note{font-size:.8em;color:var(--muted);margin-top:8px;}
+.btn{display:inline-block;padding:13px 28px;border-radius:8px;font-weight:700;font-size:.95em;cursor:pointer;border:none;transition:all .2s;font-family:'Inter',sans-serif;}
+.btn-primary{background:var(--accent);color:#fff;width:100%;}
+.btn-primary:hover{background:#92400E;transform:translateY(-1px);}
+.btn-outline{background:transparent;border:2px solid var(--border);color:var(--text);}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent);}
+.btn-navy{background:var(--navy);color:#fff;width:100%;}
+.btn-navy:hover{background:var(--navy-mid);}
+.error-msg{color:#dc2626;font-size:.82em;margin-top:8px;display:none;}
+.success-msg{color:#059669;font-size:.82em;margin-top:8px;display:none;}
+
+/* OTP */
+.otp-input{letter-spacing:8px;font-size:1.4em;text-align:center;font-weight:700;}
+.otp-timer{font-size:.8em;color:var(--muted);text-align:center;margin-top:8px;}
+.resend-link{color:var(--accent);cursor:pointer;text-decoration:underline;}
+
+/* INTRO */
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0;}
+.intro-card{background:var(--light);border-radius:10px;padding:18px;border-left:3px solid var(--accent);}
+.intro-card h4{font-size:.88em;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.intro-card p{font-size:.82em;color:var(--muted);}
+.attempt-badge{display:inline-flex;align-items:center;gap:6px;background:var(--accent-light);color:var(--accent);padding:6px 14px;border-radius:20px;font-size:.82em;font-weight:700;margin-bottom:20px;}
+
+/* QUESTIONS */
+.q-wrap{max-width:760px;margin:0 auto;padding:32px 24px;}
+.progress-bar-wrap{background:var(--white);border-bottom:1px solid var(--border);padding:14px 32px;}
+.progress-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;max-width:760px;margin-left:auto;margin-right:auto;}
+.progress-label{font-size:.82em;font-weight:600;color:var(--muted);}
+.progress-track{height:5px;background:#e5e7eb;border-radius:3px;max-width:760px;margin:0 auto;}
+.progress-fill{height:5px;background:var(--accent);border-radius:3px;transition:width .4s ease;}
+.scenario-box{background:var(--white);border-radius:12px;padding:28px;margin-bottom:24px;border-left:4px solid var(--accent);}
+.scenario-label{font-size:.72em;text-transform:uppercase;letter-spacing:2px;color:var(--accent);font-weight:700;margin-bottom:10px;}
+.scenario-text{font-size:.93em;color:#374151;line-height:1.75;white-space:pre-line;}
+.scenario-text strong{display:block;color:var(--navy);font-weight:700;margin-top:14px;margin-bottom:4px;font-size:.95em;}
+.q-text{font-size:1.05em;font-weight:700;color:var(--navy);margin-bottom:20px;line-height:1.5;}
+.options{display:flex;flex-direction:column;gap:12px;}
+.option{background:var(--white);border:2px solid var(--border);border-radius:10px;padding:16px 18px;cursor:pointer;transition:all .2s;font-size:.93em;line-height:1.5;}
+.option:hover{border-color:var(--accent);background:var(--accent-light);}
+.option.locked{pointer-events:none;cursor:default;}
+.feedback-box{background:#f8fafc;border-radius:10px;padding:20px;margin-top:20px;border-left:3px solid var(--navy);font-size:.9em;color:#374151;line-height:1.7;}
+.feedback-box .fb-label{font-weight:700;color:var(--navy);margin-bottom:6px;font-size:.85em;text-transform:uppercase;letter-spacing:.5px;}
+.next-btn-wrap{margin-top:24px;text-align:right;}
+
+/* RESULTS */
+.results-wrap{max-width:800px;margin:0 auto;padding:40px 24px;}
+.score-ring-wrap{text-align:center;margin:24px 0;}
+.score-ring{position:relative;display:inline-block;}
+.score-ring canvas{display:block;}
+.score-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;}
+.score-num{font-size:2.4em;font-weight:900;color:var(--navy);}
+.score-pct{font-size:.85em;color:var(--muted);font-weight:600;}
+.tier-badge{display:inline-block;padding:8px 24px;border-radius:20px;font-weight:700;font-size:.95em;margin:12px 0;}
+.tier-mastery{background:#dcfce7;color:#166534;}
+.tier-proficiency{background:#dbeafe;color:#1e40af;}
+.tier-competency{background:#fef9c3;color:#854d0e;}
+.tier-foundational{background:#fee2e2;color:#991b1b;}
+.results-summary{background:var(--white);border-radius:12px;padding:24px;margin:20px 0;}
+.results-summary h3{font-size:1em;font-weight:700;color:var(--navy);margin-bottom:16px;}
+.q-result-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:.88em;}
+.q-result-row:last-child{border-bottom:none;}
+.q-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.dot-high{background:#059669;}
+.dot-mid{background:#f59e0b;}
+.dot-low{background:#dc2626;}
+.cert-section{background:var(--white);border-radius:12px;padding:24px;margin:20px 0;text-align:center;}
+.cert-section h3{font-size:1em;font-weight:700;color:var(--navy);margin-bottom:16px;}
+#certCanvas{border-radius:8px;max-width:100%;box-shadow:0 4px 20px rgba(0,0,0,.1);}
+.cert-buttons{display:flex;gap:12px;justify-content:center;margin-top:16px;flex-wrap:wrap;}
+.cert-buttons .btn{width:auto;}
+
+/* HUB NAV */
+.hub-section{background:var(--navy);padding:60px 24px;}
+.hub-inner{max-width:800px;margin:0 auto;}
+.hub-section h3{color:#fff;font-size:1.2em;font-weight:700;margin-bottom:6px;}
+.hub-section p{color:#778899;font-size:.9em;margin-bottom:28px;}
+.hub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;}
+.hub-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:18px;text-decoration:none;transition:all .2s;display:block;}
+.hub-card:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);transform:translateY(-2px);}
+.hub-card.current-sim{border-color:rgba(180,83,9,.5);background:rgba(180,83,9,.08);}
+.hub-card .hw{font-size:.72em;color:var(--red);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;}
+.hub-card .hco{color:#fff;font-weight:700;font-size:.95em;}
+.hub-card .htopic{color:#556677;font-size:.78em;margin-top:4px;}
+.hub-card .hstatus{font-size:.72em;margin-top:8px;font-weight:600;}
+.status-done{color:#4ade80;}
+.status-available{color:var(--accent);}
+.status-locked{color:#445566;}
+
+/* ATTEMPT 2 PROMPT */
+.attempt2-wrap{background:var(--white);border-radius:12px;padding:28px;margin:20px 0;text-align:center;border:2px solid var(--accent);}
+.attempt2-wrap h3{color:var(--navy);font-weight:800;font-size:1.1em;margin-bottom:8px;}
+.attempt2-wrap p{color:var(--muted);font-size:.9em;margin-bottom:20px;}
+
+/* BLOCKED */
+.blocked-wrap{text-align:center;padding:60px 24px;max-width:500px;margin:0 auto;}
+.blocked-icon{font-size:3em;margin-bottom:16px;}
+.blocked-wrap h2{color:var(--navy);font-weight:800;margin-bottom:10px;}
+.blocked-wrap p{color:var(--muted);font-size:.95em;margin-bottom:24px;}
+
+/* CUMULATIVE FEEDBACK */
+.cumulative-card{margin:20px 0;}
+.cumulative-card h3{font-size:1em;font-weight:700;color:var(--navy);margin-bottom:4px;}
+.comp-bar-row{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+.comp-label{width:170px;font-size:.78em;font-weight:600;color:var(--text);flex-shrink:0;}
+.comp-track{flex:1;height:6px;background:#e5e7eb;border-radius:3px;overflow:hidden;}
+.comp-fill{height:6px;border-radius:3px;transition:width .6s ease;}
+.comp-pct{width:36px;font-size:.78em;font-weight:700;color:var(--muted);text-align:right;}
+.insight-box{margin-top:18px;background:var(--light);border-radius:10px;padding:18px;border-left:3px solid var(--accent);}
+.insight-label{font-size:.72em;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--accent);margin-bottom:8px;}
+.insight-text{font-size:.9em;color:#374151;line-height:1.75;}
+.strengths-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;}
+.strength-tag{background:rgba(5,150,105,.1);border:1px solid rgba(5,150,105,.25);color:#065f46;padding:4px 10px;border-radius:12px;font-size:.75em;font-weight:600;}
+.gap-tag{background:rgba(220,38,38,.08);border:1px solid rgba(220,38,38,.2);color:#991b1b;padding:4px 10px;border-radius:12px;font-size:.75em;font-weight:600;}
+
+/* NEXT SIM PROMO */
+.next-sim-banner{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);border-radius:12px;padding:20px 24px;margin:20px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.next-sim-banner h4{color:#fff;font-size:1em;font-weight:700;margin-bottom:4px;}
+.next-sim-banner p{color:#778899;font-size:.85em;}
+.btn-gold{background:linear-gradient(135deg,#c9a227,#e8c84a);color:#1a1a2e;font-weight:700;padding:10px 24px;border-radius:8px;border:none;cursor:pointer;font-size:.9em;text-decoration:none;display:inline-block;}
+.btn-gold:hover{opacity:.9;transform:translateY(-1px);}
+
+/* LEARN CARDS */
+.learn-wrap{max-width:620px;margin:0 auto;padding:32px 24px;}
+.learn-card{background:var(--white);border-radius:14px;padding:32px;box-shadow:0 2px 12px rgba(0,0,0,.06);display:none;}
+.learn-card.active{display:block;}
+.learn-card .learn-icon{font-size:2.4em;margin-bottom:16px;}
+.learn-card h3{font-size:1.15em;font-weight:800;color:var(--navy);margin-bottom:6px;}
+.learn-card .learn-subtitle{font-size:.85em;color:var(--accent);font-weight:600;margin-bottom:16px;}
+.learn-card p{font-size:.92em;color:#374151;line-height:1.75;margin-bottom:14px;}
+.learn-card .learn-apply{background:var(--accent-light);border-radius:10px;padding:18px;border-left:3px solid var(--accent);margin-top:16px;}
+.learn-card .learn-apply h4{font-size:.82em;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
+.learn-card .learn-apply p{font-size:.88em;color:#374151;margin-bottom:0;}
+.learn-card .learn-example{background:var(--light);border-radius:10px;padding:16px;margin-top:14px;}
+.learn-card .learn-example h4{font-size:.82em;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.learn-card .learn-example p{font-size:.85em;color:var(--muted);margin-bottom:0;font-style:italic;}
+.learn-card .learn-framework{background:#1a1a2e;border-radius:10px;padding:18px 20px;margin-top:14px;border-left:3px solid var(--accent);}
+.learn-card .learn-framework h4{font-size:.82em;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;}
+.learn-card .learn-framework ol{list-style:none;padding:0;margin:0;counter-reset:fw;}
+.learn-card .learn-framework ol li{counter-increment:fw;font-size:.84em;color:rgba(255,255,255,.75);padding:5px 0;border-bottom:1px solid rgba(255,255,255,.06);line-height:1.5;}
+.learn-card .learn-framework ol li:last-child{border-bottom:none;}
+.learn-card .learn-framework ol li::before{content:counter(fw) ". ";color:var(--accent);font-weight:700;}
+.learn-card .learn-framework ol li span{color:rgba(255,255,255,.4);font-size:.9em;}
+.learn-nav{display:flex;justify-content:space-between;align-items:center;margin-top:24px;}
+.learn-dots{display:flex;gap:8px;}
+.learn-dot{width:10px;height:10px;border-radius:50%;background:var(--border);transition:background .2s;}
+.learn-dot.active{background:var(--accent);}
+.learn-counter{font-size:.82em;color:var(--muted);font-weight:600;}
+
+/* SOURCES & DISCLAIMER */
+.sources-section{background:var(--white);border-radius:12px;padding:24px;margin:20px 0;}
+.sources-toggle{display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;}
+.sources-toggle h3{font-size:1em;font-weight:700;color:var(--navy);margin:0;}
+.sources-toggle .toggle-icon{font-size:1.2em;color:var(--muted);transition:transform .2s;}
+.sources-toggle .toggle-icon.open{transform:rotate(180deg);}
+.sources-content{display:none;margin-top:16px;padding-top:16px;border-top:1px solid var(--border);}
+.sources-content.open{display:block;}
+.sources-content ul{list-style:none;padding:0;}
+.sources-content li{font-size:.85em;color:#374151;padding:6px 0;border-bottom:1px solid #f0f0f0;line-height:1.6;}
+.sources-content li:last-child{border-bottom:none;}
+.sources-content li a{color:var(--accent);text-decoration:none;}
+.sources-content li a:hover{text-decoration:underline;}
+.sources-content .disclaimer-text{font-size:.82em;color:var(--muted);line-height:1.7;margin-top:14px;padding:14px;background:var(--light);border-radius:8px;}
+
+/* FOOTER */
+footer{background:#0d1117;color:#445566;text-align:center;padding:24px;font-size:.8em;}
+footer a{color:#556677;text-decoration:none;}
+
+@media(max-width:600px){
+  .nav-sims{display:none;}
+  .intro-grid{grid-template-columns:1fr;}
+  .sim-band h1{font-size:1.6em;}
+  .cert-buttons{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo" id="nav-logo" onclick="founderTap()">CXO <span>Simulabs</span></div>
+  <div class="nav-track">CDO Track</div>
+  <div class="nav-sims">
+    <a href="https://mohansimham.github.io/CDO-SIM-1-AntGroup/" class="nav-sim">SIM 1</a>
+    <a href="#" class="nav-sim current">SIM 2</a>
+  </div>
+</nav>
+
+<!-- PHASE: BLOCKED -->
+<div id="phase-blocked" class="phase">
+  <div class="sim-band"><div class="eyebrow">CDO Simulation 2 · Amazon</div><h1>Data & AI Strategy — Warm Up</h1></div>
+  <div class="center-wrap">
+    <div class="blocked-wrap">
+      <div class="blocked-icon">🔒</div>
+      <h2>Both Attempts Used</h2>
+      <p>You've completed both attempts for this simulation. Each simulation allows 2 attempts to give you a chance to improve your score.</p>
+      <p style="margin-top:16px;color:var(--accent);font-weight:600;">More CDO simulations coming soon!</p>
+      <div style="margin-top:24px;">
+        <a href="https://mohansimham.github.io/CDO-SIM-1-AntGroup/" class="btn btn-navy" style="display:inline-block;text-decoration:none;width:auto;">← Replay SIM 1 — Ant Group</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE: EMAIL GATE -->
+<div id="phase-email" class="phase">
+  <div class="sim-band">
+    <div class="eyebrow">CDO Simulation 2 · Amazon</div>
+    <h1>Data & AI Strategy — Warm Up</h1>
+    <p>10 pivotal moments. Real data flywheel decisions. How would you have built it?</p>
+  </div>
+  <div class="center-wrap">
+    <div class="card">
+      <h2 style="font-size:1.2em;font-weight:800;color:var(--navy);margin-bottom:6px;">Let's get started</h2>
+      <p style="font-size:.88em;color:var(--muted);margin-bottom:24px;">We'll send your personalised certificate to your email when you complete the simulation.</p>
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" id="input-name" placeholder="First and last name" autocomplete="name">
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" id="input-email" placeholder="your@email.com" autocomplete="email">
+        <div class="form-note">Used to send your certificate and improve your experience. No spam.</div>
+      </div>
+      <div id="email-error" class="error-msg">Please enter a valid name and email address.</div>
+      <button class="btn btn-primary" onclick="sendOTP()" id="send-otp-btn" style="margin-top:8px;">Send Verification Code →</button>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE: OTP -->
+<div id="phase-otp" class="phase">
+  <div class="sim-band">
+    <div class="eyebrow">CDO Simulation 2 · Amazon</div>
+    <h1>Check Your Email</h1>
+    <p>Enter the 6-digit code we just sent you.</p>
+  </div>
+  <div class="center-wrap">
+    <div class="card">
+      <h2 style="font-size:1.1em;font-weight:800;color:var(--navy);margin-bottom:6px;">Verify your email</h2>
+      <p style="font-size:.88em;color:var(--muted);margin-bottom:24px;">Code sent to <strong id="otp-email-display"></strong>. Expires in <span id="otp-timer">10:00</span>.</p>
+      <div class="form-group">
+        <label>Verification Code</label>
+        <input type="text" id="input-otp" class="otp-input" placeholder="000000" maxlength="6" inputmode="numeric">
+      </div>
+      <div id="otp-error" class="error-msg">Incorrect code. Please try again.</div>
+      <div id="otp-success" class="success-msg">✓ Email verified!</div>
+      <button class="btn btn-primary" onclick="verifyOTP()" style="margin-top:8px;">Verify & Start Simulation →</button>
+      <p style="font-size:.82em;color:var(--muted);margin-top:14px;text-align:center;">Didn't get it? <span class="resend-link" onclick="resendOTP()">Resend code</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE: INTRO -->
+<div id="phase-intro" class="phase">
+  <div class="sim-band">
+    <div class="eyebrow">CDO Simulation 2 · Amazon</div>
+    <h1>Data & AI Strategy — Warm Up</h1>
+    <p>You're the Chief Data Officer. 10 real scenarios. What do you decide?</p>
+  </div>
+  <div class="center-wrap">
+    <div class="card">
+      <div id="attempt-badge-display" class="attempt-badge">🎯 Attempt 1 of 2</div>
+      <h2 style="font-size:1.1em;font-weight:800;color:var(--navy);margin-bottom:10px;">What you'll be tested on</h2>
+      <div class="intro-grid">
+        <div class="intro-card"><h4>Data Flywheels</h4><p>Designing self-reinforcing data loops where more users generate more data, which improves products, which attracts more users — compounding advantage over time.</p></div>
+        <div class="intro-card"><h4>Platform Data Strategy</h4><p>Architecting data as a platform asset that creates value across multiple business lines simultaneously — not just within individual products.</p></div>
+        <div class="intro-card"><h4>Organisational Design</h4><p>Structuring data teams to ship fast — removing coordination drag through cross-functional pods and single-threaded ownership.</p></div>
+        <div class="intro-card"><h4>Data Accumulation</h4><p>Building systems that treat data as an appreciating strategic asset that compounds competitive advantages over time.</p></div>
+      </div>
+      <p style="font-size:.85em;color:var(--muted);margin-bottom:20px;">10 questions · Multiple choice · Feedback after every answer · ~15 minutes</p>
+      <button class="btn btn-primary" onclick="showPhase('learn')">Continue →</button>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE: LEARN -->
+<div id="phase-learn" class="phase">
+  <div class="sim-band">
+    <div class="eyebrow">CDO Simulation 2 · Amazon</div>
+    <h1>Before You Begin</h1>
+    <p>A quick refresher on the frameworks you'll apply in this simulation.</p>
+  </div>
+  <div class="learn-wrap">
+    <div class="learn-card active" data-learn="0">
+      <div class="learn-icon">🔄</div>
+      <h3>Data Flywheels & Self-Reinforcing Loops</h3>
+      <div class="learn-subtitle">The most powerful competitive advantages aren't built — they grow. Data flywheels compound automatically.</div>
+      <p>A data flywheel is a self-reinforcing cycle where data improves products, better products attract more users, more users generate more data, and more data further improves products. Unlike linear investments (where you spend $1 and get $1 of value), flywheels create <strong>compounding returns</strong> — each rotation makes the next rotation faster and more powerful. The CDO's role is to identify, design, and accelerate these flywheels. The company that spins its flywheel fastest doesn't just win today — it makes it exponentially harder for competitors to catch up. Every day the flywheel turns, the gap widens.</p>
+      <div class="learn-apply">
+        <h4>How to apply it</h4>
+        <p>Map the core data loops in your business. For an e-commerce platform: more customers create more purchase data → better recommendations → higher conversion rates → more customers. For a cloud platform: more client workloads generate more operational data → better auto-scaling and security → more reliable service → more clients. The key insight: flywheels work across business lines too. Payment data improves lending models. Streaming preferences improve shopping recommendations. The CDO who connects flywheels across divisions creates advantages that single-business competitors cannot match.</p>
+      </div>
+      <div class="learn-example">
+        <h4>Example</h4>
+        <p>An e-commerce company starts with a basic recommendation engine. Early on, with limited data, recommendations are mediocre — "customers also bought" works for popular items but fails for niche products. After 3 years and 500 million transactions, the system can predict what a customer will buy next week based on patterns invisible to humans. After 5 years and 2 billion transactions, it can personalise the entire storefront for each of 200 million customers in real-time. A competitor launching today would need 5 years of data to reach the same quality — and by then, the original company is 10 years ahead. The flywheel doesn't just create advantage; it makes the advantage uncatchable.</p>
+      </div>
+      <div class="learn-framework">
+        <h4>Data Flywheel Assessment</h4>
+        <ol>
+          <li>Core Loop Identification <span>— What is the primary data → product → user → data cycle? Map it explicitly. If you can't draw the loop, it doesn't exist.</span></li>
+          <li>Spin Speed <span>— How fast does the flywheel rotate? Real-time data (milliseconds) spins faster than batch data (hours/days). Speed determines how quickly advantages compound.</span></li>
+          <li>Data Uniqueness <span>— Is the data proprietary (only you have it) or commodity (competitors can buy similar data)? Proprietary data creates defensible flywheels.</span></li>
+          <li>Cross-Business Amplification <span>— Can data from one business line improve another? Each cross-business connection multiplies the flywheel's power.</span></li>
+          <li>Network Effects <span>— Does each new user make the product better for all users? Network-effect flywheels are the hardest to compete against.</span></li>
+          <li>Friction Points <span>— What slows the flywheel? Data silos, processing latency, governance bottlenecks, and talent gaps all create friction. Identify and remove them.</span></li>
+          <li>Competitive Moat Measurement <span>— How many years of data accumulation would a new entrant need to match your flywheel? This is your data moat.</span></li>
+        </ol>
+      </div>
+      <div class="learn-nav">
+        <span class="learn-counter">1 of 4</span>
+        <div class="learn-dots"><span class="learn-dot active"></span><span class="learn-dot"></span><span class="learn-dot"></span><span class="learn-dot"></span></div>
+        <button class="btn btn-primary" style="width:auto;padding:10px 24px;" onclick="nextLearnCard()">Next →</button>
+      </div>
+    </div>
+
+    <div class="learn-card" data-learn="1">
+      <div class="learn-icon">🏗️</div>
+      <h3>Platform Thinking vs. Product Thinking</h3>
+      <div class="learn-subtitle">Products serve customers. Platforms enable ecosystems. The data strategy is fundamentally different.</div>
+      <p>Product thinking optimises individual products: "How do we make our search engine better?" Platform thinking creates shared infrastructure that enables multiple products: "How do we build a data platform that makes search, recommendations, advertising, and logistics all better simultaneously?" The difference isn't just architectural — it's strategic. A product-oriented data team builds bespoke pipelines for each feature. A platform-oriented data team builds <strong>reusable capabilities</strong> that accelerate every team. The CDO who thinks in platforms creates leverage: build once, benefit everywhere.</p>
+      <div class="learn-apply">
+        <h4>How to apply it</h4>
+        <p>Ask three questions: (1) Are we building data pipelines for one product, or data infrastructure that serves many products? (2) When a new product team joins, can they access existing data capabilities in days, or do they build from scratch? (3) Do insights from one business line automatically flow to others, or do they stay siloed? Platform data strategy means: a unified customer identity across all products, a shared feature store that any ML model can draw from, a common event bus that lets any team subscribe to any data stream, and governance that enables sharing rather than preventing it. The investment is higher upfront, but the marginal cost of each new use case approaches zero.</p>
+      </div>
+      <div class="learn-example">
+        <h4>Example</h4>
+        <p>A multi-business company operates e-commerce, streaming, cloud computing, and smart home devices. With product thinking, each division builds its own recommendation engine, its own customer analytics, and its own ML pipeline — four separate teams solving similar problems independently. With platform thinking, a shared data platform provides: customer identity resolution (one customer across all products), a behavioural signals layer (purchase intent, content preferences, device usage patterns), and a shared ML serving infrastructure. When the streaming team discovers that customers who watch cooking shows buy 40% more kitchen products, that insight is automatically available to the e-commerce team. Four businesses sharing one platform generates more value than four businesses operating independently.</p>
+      </div>
+      <div class="learn-framework">
+        <h4>Platform Data Strategy Framework</h4>
+        <ol>
+          <li>Shared Data Assets <span>— What data (customer profiles, transaction history, behavioural signals) is valuable across multiple products? These are your platform candidates.</span></li>
+          <li>Reusable Capabilities <span>— What ML capabilities (recommendations, search ranking, fraud detection) could be built once and used by many teams? Each reusable capability is platform leverage.</span></li>
+          <li>Data Contracts <span>— How do teams publish and consume data? Standardised schemas, APIs, and SLAs create reliable platform interfaces. Without contracts, platforms become chaos.</span></li>
+          <li>Self-Service Access <span>— Can a new team access the platform's data and capabilities without filing a ticket? Self-service is the difference between a platform and a bottleneck.</span></li>
+          <li>Cross-Business Value <span>— What insights become possible only when data from multiple businesses is combined? This is the platform's unique value proposition.</span></li>
+          <li>Platform Governance <span>— Who decides what data is shared, how it's used, and what privacy controls apply? Governance enables trust, which enables sharing.</span></li>
+          <li>Build vs. Integrate <span>— Which platform components should be built in-house (core differentiators) and which should be integrated from third parties (commodity infrastructure)?</span></li>
+        </ol>
+      </div>
+      <div class="learn-nav">
+        <span class="learn-counter">2 of 4</span>
+        <div class="learn-dots"><span class="learn-dot"></span><span class="learn-dot active"></span><span class="learn-dot"></span><span class="learn-dot"></span></div>
+        <button class="btn btn-primary" style="width:auto;padding:10px 24px;" onclick="nextLearnCard()">Next →</button>
+      </div>
+    </div>
+
+    <div class="learn-card" data-learn="2">
+      <div class="learn-icon">⚡</div>
+      <h3>Organisational Design for Data Speed</h3>
+      <div class="learn-subtitle">How you organise your data teams determines how fast you can ship — and how fast determines who wins.</div>
+      <p>The biggest bottleneck in most data organisations isn't technology or talent — it's <strong>coordination overhead</strong>. When a single ML feature requires sign-off from data engineering, data science, analytics, and ML ops (each a separate team with separate priorities and separate managers), projects that should take weeks take months. The solution is organisational, not technical: cross-functional pods where every skill needed to ship a feature sits in one team, led by a "single-threaded owner" who is responsible for one thing and one thing only. This model eliminates handoffs, reduces waiting, and creates clear accountability.</p>
+      <div class="learn-apply">
+        <h4>How to apply it</h4>
+        <p>Map the time from "idea" to "deployed ML feature" in your organisation. If it's more than 6 weeks, the problem is almost certainly coordination, not capability. The fix: create cross-functional pods (a data engineer + data scientist + ML ops engineer + analyst) dedicated to a specific product area. Each pod owns the full pipeline from data to deployed model. Keep a small central platform team that maintains shared infrastructure (data warehouse, feature store, model serving). The platform team builds the roads; the pods drive the cars. When a recommendation pod needs a new feature, they build it end-to-end in 2-3 weeks instead of coordinating across 4 teams for 4 months.</p>
+      </div>
+      <div class="learn-example">
+        <h4>Example</h4>
+        <p>A data organisation of 300 people is structured by function: 80 data engineers, 100 data scientists, 60 analysts, 60 ML ops engineers. A new product feature (personalised email recommendations) requires all four teams. Data engineering takes 6 weeks to build the pipeline. Data science waits, then takes 4 weeks to build the model. Analytics waits, then takes 3 weeks to validate. ML ops waits, then takes 5 weeks to deploy. Total: 18 weeks. After restructuring into cross-functional pods, the Recommendations Pod (2 data engineers, 3 data scientists, 1 analyst, 2 ML ops engineers) builds the same feature in 5 weeks. No waiting. No handoffs. No miscommunication. The technology didn't change — the organisation did.</p>
+      </div>
+      <div class="learn-framework">
+        <h4>Data Organisation Design Framework</h4>
+        <ol>
+          <li>Value Stream Mapping <span>— Map the end-to-end flow from business request to deployed model. Where are the waits, handoffs, and blockers? These are your organisational bottlenecks.</span></li>
+          <li>Pod Composition <span>— Each pod needs the full set of skills to ship independently: data engineering, data science, ML ops, and domain expertise. Missing any skill creates dependency on another team.</span></li>
+          <li>Single-Threaded Ownership <span>— Each pod has one leader accountable for one outcome. No split responsibilities, no matrix management. Clear ownership drives clear results.</span></li>
+          <li>Platform vs. Pod Boundary <span>— What's shared infrastructure (maintained centrally) vs. what's product-specific (owned by pods)? The boundary determines who builds what.</span></li>
+          <li>Communication Overhead <span>— The number of cross-team dependencies directly predicts project duration. Minimise dependencies by putting everything needed inside the pod.</span></li>
+          <li>Talent Allocation <span>— How do you distribute scarce skills (senior ML engineers, domain experts) across pods? Central hiring + pod placement balances growth with impact.</span></li>
+          <li>Knowledge Sharing <span>— Pods ship fast but can become siloed. "Guild" meetings (all ML engineers across pods meeting monthly) and shared documentation prevent reinventing the wheel.</span></li>
+        </ol>
+      </div>
+      <div class="learn-nav">
+        <span class="learn-counter">3 of 4</span>
+        <div class="learn-dots"><span class="learn-dot"></span><span class="learn-dot"></span><span class="learn-dot active"></span><span class="learn-dot"></span></div>
+        <button class="btn btn-primary" style="width:auto;padding:10px 24px;" onclick="nextLearnCard()">Next →</button>
+      </div>
+    </div>
+
+    <div class="learn-card" data-learn="3">
+      <div class="learn-icon">📊</div>
+      <h3>Data Accumulation as Strategic Asset</h3>
+      <div class="learn-subtitle">Data is either a cost centre (stored because you have it) or a strategic asset (accumulated because it compounds value).</div>
+      <p>Most companies collect data as a byproduct of operations — transactions generate records, users generate logs, systems generate metrics. The data exists because the business runs, not because someone designed it to accumulate strategic value. The best CDOs flip this: they design data <strong>accumulation architectures</strong> where every interaction, transaction, and decision deliberately feeds into systems that get smarter over time. The difference is intentionality. Byproduct data is messy, siloed, and hard to use. Deliberately accumulated data is clean, connected, and compounds in value. After 5 years, a company with intentional data accumulation has an asset worth billions. A company with byproduct data has a storage bill.</p>
+      <div class="learn-apply">
+        <h4>How to apply it</h4>
+        <p>Design every system with a "data accumulation lens": (1) What data does this system produce? (2) How does that data feed back into making the system better? (3) How does that data improve other systems? For a logistics network: every package delivery generates route data, delivery time data, and customer satisfaction data. Route data improves future route optimisation. Delivery time data improves future time estimates. Customer satisfaction data improves future delivery experience design. The same delivery creates three compounding data loops — but only if the architecture is designed to capture and connect them. Accidental data collection captures maybe 20% of potential value. Intentional data accumulation captures 80%+.</p>
+      </div>
+      <div class="learn-example">
+        <h4>Example</h4>
+        <p>Consider two approaches to warehouse operations. Company A tracks what it must: inventory counts, order fulfilment rates, shipping times. This data is used for operational reporting — dashboards that tell managers what happened yesterday. Company B instruments every aspect of warehouse operations: robot movement patterns, pick accuracy by location, seasonal demand curves by product category, worker ergonomic data, equipment maintenance cycles, and environmental conditions. All this data feeds into ML models that predict: which products will be ordered tomorrow (pre-positioning inventory), which equipment will fail next week (preventive maintenance), and which warehouse layouts optimise for current demand patterns (dynamic reconfiguration). After 3 years, Company A has reporting. Company B has a self-optimising warehouse that's 40% more efficient — and the gap grows every quarter as the models improve.</p>
+      </div>
+      <div class="learn-framework">
+        <h4>Data Asset Accumulation Framework</h4>
+        <ol>
+          <li>Data Audit <span>— What data do your systems currently produce? What data could they produce with minor instrumentation changes? The gap between these two numbers is your "data waste."</span></li>
+          <li>Feedback Loop Design <span>— For each data source, define the loop: data → model → decision → outcome → data. If there's no feedback loop, the data accumulates cost, not value.</span></li>
+          <li>Cross-System Connections <span>— What insights emerge when you connect data across systems? Customer behaviour + logistics + inventory data together are worth more than the sum of their parts.</span></li>
+          <li>Time Value <span>— How does the data's value change with volume? Some data is valuable at 100 records (customer complaints). Other data is valuable at 100 million records (product recommendations). Prioritise high-volume, high-value data.</span></li>
+          <li>Uniqueness Assessment <span>— Which of your data sources are truly unique (no competitor has this data)? Unique data is the foundation of defensible competitive advantage.</span></li>
+          <li>Quality Architecture <span>— Data that accumulates errors accumulates liability, not value. Build quality checks at the point of collection, not after the fact.</span></li>
+          <li>Depreciation vs. Appreciation <span>— Does the data become more or less valuable over time? Behavioural patterns appreciate (more data = better models). Snapshots depreciate (last year's inventory count is useless). Invest in appreciating data.</span></li>
+        </ol>
+      </div>
+      <div class="learn-nav">
+        <span class="learn-counter">4 of 4</span>
+        <div class="learn-dots"><span class="learn-dot"></span><span class="learn-dot"></span><span class="learn-dot"></span><span class="learn-dot active"></span></div>
+        <button class="btn btn-primary" style="width:auto;padding:10px 24px;" onclick="startSim()">Start Simulation →</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- PHASE: QUESTIONS -->
+<div id="phase-questions" class="phase">
+  <div class="progress-bar-wrap">
+    <div class="progress-top">
+      <span class="progress-label" id="q-progress-label">Question 1 of 10</span>
+      <span class="progress-label" id="q-score-label">Score: 0</span>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+  </div>
+  <div class="q-wrap">
+    <div class="scenario-box">
+      <div class="scenario-label">Scenario</div>
+      <div class="scenario-text" id="q-scenario"></div>
+    </div>
+    <div class="q-text" id="q-question"></div>
+    <div class="options" id="q-options"></div>
+    <div class="feedback-box" id="q-feedback" style="display:none;">
+      <div class="fb-label">Expert Analysis</div>
+      <div id="q-feedback-text"></div>
+    </div>
+    <div class="next-btn-wrap">
+      <button class="btn btn-navy" id="next-btn" onclick="nextQuestion()" style="display:none;">Next Question →</button>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE: RESULTS -->
+<div id="phase-results" class="phase">
+  <div class="sim-band">
+    <div class="eyebrow">Simulation Complete</div>
+    <h1 id="results-heading">Your Results</h1>
+  </div>
+  <div class="results-wrap">
+
+    <div class="card" style="text-align:center;margin-bottom:20px;">
+      <div class="score-ring-wrap">
+        <div class="score-ring">
+          <canvas id="scoreRingCanvas" width="160" height="160"></canvas>
+          <div class="score-center">
+            <div class="score-num" id="result-pct">0%</div>
+            <div class="score-pct" id="result-score-label">0 / 0</div>
+          </div>
+        </div>
+      </div>
+      <div class="tier-badge" id="tier-badge">Strategic Mastery</div>
+      <p id="tier-feedback" style="color:var(--muted);font-size:.9em;max-width:480px;margin:0 auto;"></p>
+    </div>
+
+    <!-- Next Sim Banner -->
+    <div class="next-sim-banner" id="next-sim-banner" style="display:none;">
+      <div>
+        <h4>More CDO simulations coming soon</h4>
+        <p>New CDO competencies across real-world data strategy cases</p>
+      </div>
+      <a href="https://www.cxosimulabs.com" class="btn-gold">Explore CXO Simulabs →</a>
+    </div>
+
+    <div class="results-summary">
+      <h3>Decision Analysis — Expert Feedback on Every Choice</h3>
+      <div id="q-breakdown"></div>
+    </div>
+
+    <!-- Cumulative Feedback -->
+    <div class="card cumulative-card" id="cumulative-section">
+      <h3>Your CDO Profile</h3>
+      <p style="font-size:.82em;color:var(--muted);margin-bottom:20px;">Based on your decision patterns across all 10 scenarios</p>
+      <div id="competency-bars"></div>
+      <div class="insight-box">
+        <div class="insight-label">Strategic Insight</div>
+        <div class="insight-text" id="insight-text"></div>
+        <div style="margin-top:14px;">
+          <div style="font-size:.75em;font-weight:700;color:#059669;margin-bottom:6px;">STRENGTHS</div>
+          <div class="strengths-row" id="strength-tags"></div>
+        </div>
+        <div style="margin-top:12px;">
+          <div style="font-size:.75em;font-weight:700;color:#dc2626;margin-bottom:6px;">DEVELOP FURTHER</div>
+          <div class="strengths-row" id="gap-tags"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Attempt 2 prompt (shown if attempt 1 done) -->
+    <div class="attempt2-wrap" id="attempt2-prompt" style="display:none;">
+      <h3>Try Attempt 2?</h3>
+      <p>Different questions, same competencies. Can you improve your score?</p>
+      <button class="btn btn-primary" onclick="startAttempt2()" style="width:auto;padding:12px 32px;">Start Attempt 2 →</button>
+    </div>
+
+    <div class="cert-section">
+      <h3>Your Certificate</h3>
+      <p style="font-size:.82em;color:var(--muted);margin-bottom:16px;">Download the certificate for LinkedIn or the square badge for Instagram, WhatsApp and other social media.</p>
+      <canvas id="certCanvas" width="1200" height="850"></canvas>
+      <div class="cert-buttons" style="margin-top:14px;">
+        <button class="btn btn-navy" onclick="downloadCert()" style="width:auto;">↓ Certificate (LinkedIn)</button>
+        <button class="btn btn-navy" onclick="downloadBadge()" style="width:auto;">↓ Badge (Instagram)</button>
+        <button class="btn btn-outline" onclick="shareLinkedIn()" style="width:auto;">Share LinkedIn</button>
+        <button class="btn btn-outline" onclick="shareTwitter()" style="width:auto;">Share X / Twitter</button>
+        <button class="btn btn-outline" onclick="shareWhatsApp()" style="width:auto;">Share WhatsApp</button>
+        <button class="btn btn-outline" onclick="copyLink()" style="width:auto;" id="copy-link-btn">Copy Link</button>
+      </div>
+      <!-- Hidden badge canvas -->
+      <canvas id="badgeCanvas" width="1080" height="1080" style="display:none;"></canvas>
+    </div>
+
+    <!-- Sources & Disclaimer -->
+    <div class="sources-section">
+      <div class="sources-toggle" onclick="this.querySelector('.toggle-icon').classList.toggle('open');this.nextElementSibling.classList.toggle('open');">
+        <h3>Sources & Disclaimer</h3>
+        <span class="toggle-icon">▼</span>
+      </div>
+      <div class="sources-content">
+        <ul>
+          <li>Publicly available information on e-commerce data strategy, recommendation systems, and data flywheel concepts — industry publications, conference talks, and academic research</li>
+          <li>Published analyses of platform business models and data network effects from McKinsey Global Institute, Harvard Business Review, and MIT Sloan Management Review</li>
+          <li>Industry research on organisational design for data and AI teams — cross-functional team structures, single-threaded ownership models, and data mesh architectures</li>
+          <li>Academic literature on recommendation systems, collaborative filtering, deep learning for personalisation, and real-time ML serving at scale</li>
+          <li>Published reporting on data governance in platform businesses — marketplace data rights, algorithmic fairness, and privacy-first architecture design</li>
+          <li>Cloud computing and edge computing architecture literature — hybrid processing models, federated learning, and privacy-preserving machine learning</li>
+          <li>AI ethics and algorithmic accountability research — bias detection, fairness constraints, and regulatory frameworks for automated decision-making</li>
+        </ul>
+        <div class="disclaimer-text">
+          <strong>Disclaimer:</strong> CXO Simulabs is an independent educational platform. "Amazon" and related marks are trademarks of Amazon.com, Inc. This simulation is not affiliated with, endorsed by, or sponsored by Amazon.com, Inc. or any of its subsidiaries. All scenarios are inspired by publicly available information about e-commerce data strategy, data flywheels, and platform business models and may include dramatised or generalised elements for educational purposes. No copyrighted materials were used in the creation of this content. All dialogue is fictional and does not represent actual statements by any individual. Titles such as "CEO," "CTO," and "CDO" refer to fictional roles in educational scenarios, not actual executives. Financial figures and statistics are illustrative approximations used for educational purposes and do not represent actual company data. This is not a professional certification or accreditation.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- HUB NAV -->
+  <div class="hub-section">
+    <div class="hub-inner">
+      <h3>CDO Track — All Simulations</h3>
+      <p>Each simulation tests a different set of CDO competencies. 18 simulations planned.</p>
+      <div class="hub-grid">
+        <a href="https://mohansimham.github.io/CDO-SIM-1-AntGroup/" class="hub-card">
+          <div class="hw">SIM 1</div>
+          <div class="hco">Ant Group</div>
+          <div class="htopic">AI Operating Models · Data Architecture · Cost Transformation</div>
+          <div class="hstatus status-available">→ Play now</div>
+        </a>
+        <div class="hub-card current-sim">
+          <div class="hw">SIM 2 · Current</div>
+          <div class="hco">Amazon</div>
+          <div class="htopic">Data Flywheel · Self-Reinforcing Loops · Platform Data</div>
+          <div class="hstatus status-done">✓ Completed</div>
+        </div>
+        <div class="hub-card" style="opacity:.4;pointer-events:none;">
+          <div class="hw">SIM 3–18</div>
+          <div class="hco">Coming Soon</div>
+          <div class="htopic">More CDO competencies across real-world cases</div>
+          <div class="hstatus status-locked">🔒 Coming soon</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 CXO Simulabs · <a href="https://www.cxosimulabs.com">cxosimulabs.com</a> · <a href="https://www.cxosimulabs.com/privacy.html">Privacy</a> · <a href="https://www.cxosimulabs.com/terms.html">Terms</a></p>
+    <p style="margin-top:8px;font-size:.75em;color:#334455;max-width:700px;margin-left:auto;margin-right:auto;line-height:1.6;">CXO Simulabs is an independent educational platform. "Amazon" and related marks are trademarks of Amazon.com, Inc. This simulation is not affiliated with, endorsed by, or sponsored by Amazon.com, Inc. Scenarios are inspired by publicly available information and may include dramatised elements for educational purposes. This is not a professional certification. All dialogue is fictional and does not represent actual statements by any individual.</p>
+  </footer>
+</div>
+
+<script>
+// ─── FOUNDER MODE ─────────────────────────────────────────
+let _founderTaps=0, _founderTimer=null;
+function founderTap(){
+  _founderTaps++;
+  clearTimeout(_founderTimer);
+  _founderTimer=setTimeout(()=>_founderTaps=0,600);
+  if(_founderTaps>=3){ enterFounderMode(); _founderTaps=0; }
+}
+function enterFounderMode(){
+  Object.values(LS).forEach(k=>localStorage.removeItem(k));
+  state.name='Founder Preview';
+  state.email='founder@cxosimulabs.com';
+  state.currentAttempt=1;
+  if(!document.getElementById('founder-badge')){
+    const b=document.createElement('div');
+    b.id='founder-badge';
+    b.style.cssText='position:fixed;bottom:16px;right:16px;background:#1a1a2e;color:#fff;padding:8px 16px;border-radius:8px;font-size:.78em;font-weight:600;z-index:9999;border:1px solid rgba(226,55,68,.4);cursor:pointer;';
+    b.innerHTML='🔧 Founder Preview &nbsp;<span style="color:#e23744;" onclick="exitFounderMode()">✕ Exit</span>';
+    document.body.appendChild(b);
+  }
+  document.getElementById('attempt-badge-display').textContent='🔧 Preview Mode';
+  showPhase('intro');
+}
+function exitFounderMode(){
+  const b=document.getElementById('founder-badge');
+  if(b) b.remove();
+  location.reload();
+}
+
+// ─── COMPETENCY MAP ───────────────────────────────────────
+const COMP_MAP = [
+  {name:'AI Strategy Design'},
+  {name:'Data Architecture'},
+  {name:'Build vs Buy Decisions'},
+  {name:'Cost-Benefit Analysis'},
+  {name:'Data Governance'},
+  {name:'Stakeholder Communication'},
+  {name:'Competitive Moat Analysis'},
+  {name:'Technology Assessment'},
+  {name:'Risk Management'},
+  {name:'Organisational Design'},
+];
+
+// ─── CONFIG ───────────────────────────────────────────────
+const EJS_KEY      = 'ABWpMkWPOTsO_gQWG';
+const EJS_SERVICE  = 'service_a6x573k';
+const EJS_TEMPLATE = 'template_xt90q9j';
+emailjs.init(EJS_KEY);
+
+const LS = {
+  name:      'cxo_cdo2_name',
+  email:     'cxo_cdo2_email',
+  attempts:  'cxo_cdo2_attempts',
+  scores:    'cxo_cdo2_scores',
+};
+
+// ─── STATE ────────────────────────────────────────────────
+let state = {
+  name:'', email:'',
+  otp:'', otpExpiry:0, otpAttempts:0,
+  timerInterval:null,
+  currentAttempt:1,
+  currentQ:0,
+  answers:[],
+  totalScore:0, maxScore:0,
+};
+
+// ─── QUESTIONS ────────────────────────────────────────────
+const Q = {
+  1: [
+    {
+      scenario:`2010 — Designing the Core Data Flywheel\n\nA rapidly growing e-commerce platform processes millions of transactions daily across hundreds of product categories. The CEO believes data will be the company's most important strategic asset. The CDO must design the foundational data strategy.\n\nTwo approaches are on the table:\n(A) Build a data flywheel from day one: use transaction and browsing data to power personalised recommendations, which drive more purchases, generating more data, further improving recommendations. This requires $50M upfront investment in ML infrastructure.\n(B) Focus on scaling the marketplace first — more sellers, more products, better logistics. Use basic analytics for reporting. Invest in ML-driven personalisation later once the business is bigger.\n\nThe CFO argues: "We're burning cash on expansion. Spending another $50M on data infrastructure before we're profitable is reckless."`,
+      question:`As CDO, how do you design the data strategy?`,
+      options:[
+        {text:`Build the data flywheel from day one. The flywheel effect means every dollar invested in data infrastructure compounds over time: more data improves recommendations, better recommendations drive more purchases, more purchases generate more data. Present the CFO with a 3-year model showing how the flywheel reduces customer acquisition costs and increases lifetime value. Start with the highest-impact loop (product recommendations driving repeat purchases) and expand to search, pricing, and logistics.`, points:10, feedback:`The data flywheel is the single most important strategic decision for a platform business. Starting early creates compounding advantages that are nearly impossible for competitors to replicate. The key insight: the flywheel doesn't just improve products — it reduces costs. Better recommendations mean lower customer acquisition costs (users come back organically), lower return rates (customers buy what they actually want), and higher lifetime value (personalisation increases cross-category purchases). The 3-year model for the CFO should show: Year 1 — investment phase, measurable improvement in recommendation accuracy. Year 2 — the flywheel starts turning: recommendation-driven purchases increase 25%, reducing the cost of each new sale. Year 3 — the flywheel accelerates: the recommendation engine outperforms any competitor who started later because it has 3 years more data. The $50M investment looks expensive today but creates an asset worth billions.`},
+        {text:`Compromise: invest moderately in data infrastructure while continuing marketplace expansion. Build basic recommendation capabilities using existing transaction data, but don't over-invest in ML infrastructure until the business is larger. This balances growth with data capability development.`, points:6, feedback:`A moderate approach delivers moderate results. Basic recommendations using transaction data ("customers who bought X also bought Y") provide some value but don't create a flywheel — they create a one-directional benefit. The problem with "investing more later" is that data advantages compound. Starting with half the investment doesn't get you half the result — it gets you a fraction, because you miss the compounding effect of early data accumulation. Competitors who invest aggressively in data infrastructure from day one will have 2-3 years more data by the time you "scale up" your investment, and that gap is nearly impossible to close. The moderate path is comfortable but strategically dangerous.`},
+        {text:`Prioritise marketplace expansion now and build data capabilities later. The CFO is right that the company needs to reach scale before making expensive infrastructure investments. Once the marketplace is large enough, the volume of data will make ML investments more efficient. Data strategy is a second-phase priority.`, points:3, feedback:`This is the most common mistake in data strategy: treating data as a second-phase priority. The logic sounds reasonable — "let's get big first, then get smart" — but it ignores the compounding nature of data advantages. A large marketplace without data infrastructure is just a large marketplace. A competitor with half the products but a spinning data flywheel will eventually overtake you because their customer experience improves automatically while yours doesn't. The "later" approach also creates technical debt: when you eventually invest in data infrastructure, you'll need to retroactively instrument systems, clean years of poorly-collected data, and rebuild processes that weren't designed for ML. The cost of "later" is always higher than the cost of "now."`},
+        {text:`Build the data flywheel but focus it entirely on operational efficiency rather than customer-facing personalisation. Use data to optimise warehouse operations, delivery routing, and inventory management first. These have clearer, faster ROI than personalisation and are easier to justify to the CFO.`, points:5, feedback:`Operational data use is valuable and easier to measure — but it misses the flywheel's true power. Warehouse optimisation and routing improvements are linear: you invest in better algorithms and get proportionally better operations. They don't create a self-reinforcing cycle. Customer-facing personalisation, by contrast, creates a genuine flywheel: better recommendations → more purchases → more data → even better recommendations. This compounding cycle is the source of long-term competitive advantage. The optimal approach starts with customer-facing personalisation (where the flywheel effect is strongest) and extends to operations (where the ROI is clearest). Starting with operations alone gives you efficiency gains but not a moat.`}
+      ],
+      competency:[0,1,6]
+    },
+    {
+      scenario:`2012 — Scaling Personalisation Across 100 Million Products\n\nThe e-commerce platform now serves 80 million customers browsing a catalogue of 100 million products that grows by 50,000 items daily. The current recommendation system uses simple "customers who bought X also bought Y" logic, which works for popular items but fails for the long tail.\n\nThe engineering team proposes three approaches:\n• Item-based collaborative filtering (find similar items based on co-purchase patterns)\n• Content-based filtering (analyse product attributes and match to user preferences)\n• Deep learning models (neural networks that learn complex patterns from all available signals — browsing, purchasing, searching, reviewing, returning)\n\nThe deep learning approach requires 6 months longer and 3x the engineering investment but promises significantly better accuracy and the ability to handle "cold start" problems (new users and new products with no history).`,
+      question:`What recommendation architecture should the CDO advocate for?`,
+      options:[
+        {text:`Invest in deep learning as the strategic foundation, but deploy incrementally. Keep the existing collaborative filtering system as the baseline. Build the deep learning infrastructure in parallel, training on all available signals (browse, search, purchase, review, return). Roll out gradually — starting with high-traffic categories where accuracy improvements translate directly to revenue. This gives immediate results while building toward a fundamentally superior system.`, points:10, feedback:`This approach balances strategic ambition with pragmatic execution. The deep learning foundation is the right long-term bet because it can learn complex, non-linear patterns that simpler methods miss: "customers who browse camping gear on weekday mornings and have purchased running shoes in the last 6 months are 3x more likely to buy hiking boots." Collaborative filtering can't capture this; deep learning can. The incremental rollout is critical: start with categories where the data is richest and the revenue impact is highest (electronics, fashion), validate the lift, then expand. Keeping the existing system as a baseline provides a safety net and enables rigorous A/B testing. The 6-month longer timeline is a strategic investment — the company will use this recommendation engine for the next decade.`},
+        {text:`Use a hybrid ensemble that combines all three approaches. Different methods work better in different contexts: collaborative filtering for popular items with rich co-purchase data, content-based for niche products, and deep learning for cold-start situations. An ensemble that selects the best approach for each context combines the strengths of all three.`, points:7, feedback:`Ensemble approaches are pragmatic and can deliver good short-term results. The hybrid model covers weaknesses: collaborative filtering handles popular items well, content-based handles the long tail, and deep learning handles cold starts. But ensembles add operational complexity — three systems to maintain, monitor, and retrain instead of one. Over time, as the deep learning model accumulates more data, it will outperform the other components in all contexts, making them redundant overhead. The ensemble is a good transitional strategy but not a long-term architecture. The CDO should plan the ensemble as a bridge toward a unified deep learning system.`},
+        {text:`Start with item-based collaborative filtering — it's proven, fast to deploy, and delivers solid results. The 80/20 rule applies: collaborative filtering captures 80% of the value with 20% of the engineering effort. Once deployed and generating results, evaluate whether deep learning's incremental improvement justifies the additional investment.`, points:4, feedback:`The 80/20 argument is seductive but misleading at this scale. At 80 million customers and 100 million products, the "80% of value" from collaborative filtering is leaving billions on the table. Collaborative filtering excels at popular items but fails on the long tail — and at 100 million products, the long tail IS the business. It also can't handle new products (50,000 added daily) or new users (millions per month). "Evaluate later" is a trap: by the time you conclude that deep learning is worth the investment, competitors who invested earlier will be 2 years ahead in data and model quality.`},
+        {text:`Build a real-time personalisation engine focused on current-session behaviour rather than historical data. If a customer is browsing camping gear right now, show camping recommendations immediately, regardless of purchase history. Session-based personalisation captures intent better than historical models.`, points:5, feedback:`Session-based personalisation captures immediate intent, which is valuable — someone browsing tents right now probably wants camping gear, not the running shoes they bought last month. But session-only personalisation throws away the most valuable signal: long-term behavioural patterns. A customer who has bought premium products for 3 years should see different recommendations than a price-sensitive customer, even if both are browsing the same category right now. The best recommendation systems combine session signals (what you're doing now) with historical patterns (what you've done over time) and contextual signals (time of day, device, location). Session-only is fast to build but strategically limited.`}
+      ],
+      competency:[1,7,6]
+    },
+    {
+      scenario:`2014 — Launching a Smart Speaker: Voice Data Strategy\n\nThe company is launching a voice-enabled smart speaker that will sit in millions of homes, always listening for a wake word. When activated, it processes voice commands — playing music, ordering products, controlling smart home devices, answering questions.\n\nThe Head of AI is excited: "Voice data will supercharge our recommendation engines. We'll know what customers want before they search for it. Voice queries reveal intent, context, and preferences that click data can't capture."\n\nThe Chief Privacy Officer is concerned: "We'll be recording conversations in people's homes. One data breach or misuse scandal could destroy trust across all our businesses — not just the speaker."\n\nThe CDO must design a voice data strategy that balances the enormous data opportunity with serious privacy risks.`,
+      question:`How should the CDO design the voice data strategy?`,
+      options:[
+        {text:`Design a tiered data architecture with strong privacy boundaries. Tier 1: Process voice commands locally on the device where possible — no cloud transmission for simple operations (timer, alarm, volume). Tier 2: Send only the specific command after the wake word to the cloud for processing — never continuous audio. Tier 3: Store anonymised, aggregated intent patterns (not raw audio) for product improvement. Build transparent user controls: review history, delete recordings, opt out of data use. Publish a clear data practices report.`, points:10, feedback:`This tiered approach is the gold standard for privacy-sensitive data collection. Tier 1 (local processing) eliminates privacy risk for simple commands entirely — nothing leaves the device. Tier 2 (wake-word-triggered cloud processing) limits cloud transmission to intentional interactions, addressing the "always listening" fear. Tier 3 (anonymised intent patterns) extracts the strategic value (understanding what customers want) without the privacy liability (storing identifiable voice recordings). The user controls are essential: trust is built through transparency. Letting customers review and delete their voice history demonstrates that the company takes privacy seriously. Publishing a data practices report proactively pre-empts regulatory scrutiny. This approach captures 80% of the voice data value while managing 90% of the risk.`},
+        {text:`Maximise data collection with user consent. Present a clear consent flow during device setup explaining that voice data will improve services. Collect and store all post-wake-word voice interactions in the cloud. Use this data to improve speech recognition, understand customer intent, and enhance recommendations. Users who don't consent get a basic version of the device.`, points:5, feedback:`Consent-based collection is legally defensible but strategically risky. The problem: most users click "accept" without reading consent flows, which creates a legal shield but not genuine trust. When a journalist inevitably reveals that the company stores millions of voice recordings, the response "but they consented" won't satisfy public outrage. The two-tier experience (full features for consenters, basic for non-consenters) also creates a coercive dynamic — customers feel pressured to consent to get the product they paid for. The better approach: collect less data but collect it more transparently, so that when the scrutiny comes (and it will), the company can say "we only collect what's necessary, and here's exactly what we do with it."`},
+        {text:`Minimise data collection to reduce risk. Process all voice commands on the device. Send only the specific API call to the cloud (e.g., "play song X" becomes a song request, not a voice recording). Don't store voice data at all. This eliminates privacy risk entirely but limits the ability to improve voice recognition and understand customer intent.`, points:4, feedback:`Minimal collection eliminates risk but also eliminates the strategic data opportunity. The entire point of a voice-enabled device — from a data strategy perspective — is to understand customer intent in a way that clicks and purchases can't capture. When a customer asks "what's a good recipe for dinner tonight?", that reveals dietary preferences, cooking habits, and meal planning patterns that no amount of e-commerce browsing data can provide. Processing everything on-device with current technology also means significantly worse voice recognition accuracy (cloud models are much larger and more accurate than edge models). The CDO's job is to find the balance between "capture everything" and "capture nothing" — and this option gives up too much strategic value.`},
+        {text:`Create a separate, isolated data infrastructure for voice data with its own governance team. Voice data should never be combined with e-commerce data, cloud platform data, or any other business line's data. This "data firewall" prevents cross-contamination and limits the blast radius of any potential breach.`, points:6, feedback:`Data isolation reduces cross-business privacy risk but also eliminates cross-business value — which is the primary strategic reason for building the smart speaker. If voice data can't improve shopping recommendations ("Alexa, I need more paper towels" → auto-suggest paper towels in the shopping app), the data flywheel doesn't spin across business lines. Complete isolation makes voice data a standalone asset rather than an amplifier of the entire ecosystem. A better approach: create privacy-controlled bridges between data domains. Voice intent signals (not raw audio) can flow to shopping as anonymised preference indicators. This preserves the cross-business flywheel while limiting the blast radius of any breach to processed signals, not raw voice recordings.`}
+      ],
+      competency:[4,8,0]
+    },
+    {
+      scenario:`2013 — Cloud Platform Client Data: Firewall or Flywheel?\n\nThe company's cloud computing division hosts thousands of enterprise clients. These clients run their workloads on the company's servers, generating vast amounts of operational metadata: compute usage patterns, database query structures, storage access patterns, networking traffic flows.\n\nThe AI research team discovers that anonymised, aggregated patterns from client workloads could dramatically improve the cloud platform's own services — auto-scaling algorithms, cost optimisation tools, security threat detection.\n\nThe team argues: "We're not looking at client data. We're analysing infrastructure metadata to build better services."\n\nA major enterprise client's CTO calls directly: "If you use any patterns from our workloads to improve your services — even anonymised — we'll move to a competitor. Our workload patterns reveal our business strategy."`,
+      question:`What data governance framework should the CDO establish for cloud client data?`,
+      options:[
+        {text:`Establish an absolute data firewall: cloud platform client data — including all metadata, usage patterns, and workload characteristics — is never used to improve the company's products, services, or AI models. No exceptions, no anonymisation loophole. The cloud platform's value proposition must be built on the principle that client data is exclusively the client's. Invest in synthetic data generation and voluntary opt-in benchmarking programmes where clients share anonymised data in exchange for optimisation insights.`, points:10, feedback:`The absolute firewall is the strategically correct answer, even though it sacrifices a data opportunity. Here's why: the cloud computing business depends on trust. Enterprise clients choose a cloud provider partly based on capability and partly based on trust that their data (including metadata) won't be used against them. One credible accusation of data misuse could trigger an exodus of enterprise clients worth billions in annual revenue. The opt-in benchmarking programme is the elegant solution: clients who voluntarily share anonymised data get optimisation insights in return. This is a fair value exchange that maintains trust. Synthetic data generation fills the gap for service improvement. The client who called is not an outlier — they're saying what every enterprise client thinks. The firewall isn't a constraint; it's a competitive advantage: "We never use your data. Ever. That's our promise."`},
+        {text:`Create a tiered consent framework: clients can opt in to sharing anonymised usage data in exchange for better pricing or optimisation recommendations. Make it genuinely optional with no service degradation for non-participants. Use the opt-in data to improve services for all clients. Be transparent about exactly what data is used and how.`, points:7, feedback:`Tiered consent is reasonable and many cloud providers use this approach. The opt-in model respects client autonomy, and the value exchange (better pricing for data sharing) gives clients a reason to participate. But there's a subtle risk: even with genuine opt-in, the perception that the cloud provider "uses client data" creates a trust deficit compared to a competitor who makes an absolute no-use pledge. Enterprise procurement teams will ask "what happens to our data?" and "we only use it if you opt in" is a weaker answer than "we never use it, period." The consent framework works but doesn't maximise trust.`},
+        {text:`Use only deeply anonymised, aggregated patterns that cannot be traced to any individual client. Aggregate across minimum 1,000 clients before using any pattern. Have independent auditors verify the anonymisation. Most clients won't know or care about infrastructure-level metadata — the enterprise CTO who called is an outlier.`, points:4, feedback:`"Most clients won't care" is a dangerous assumption in enterprise cloud computing. The clients who do care — large enterprises, financial institutions, government agencies — are often the highest-value clients. One public incident where a client discovers their workload patterns were used (even anonymised) could trigger regulatory investigation and competitive defection. The "1,000-client aggregation" threshold sounds robust but is technically vulnerable: sophisticated analysis might still reveal patterns attributable to large clients whose workloads are distinctive. And dismissing the calling CTO as "an outlier" ignores that they represent the most valuable segment. Trust is binary in enterprise: you either have it or you don't.`},
+        {text:`Don't use client data at all, but invest in observability infrastructure that monitors the cloud platform's own internal system performance — not client workloads. Focus on optimising infrastructure efficiency (server utilisation, network throughput, storage performance) rather than learning from how clients use it.`, points:5, feedback:`Internal observability is valuable but limited. Platform performance data tells you how your infrastructure behaves — not how clients use it. Auto-scaling improvements require understanding workload patterns. Security threat detection requires understanding traffic patterns. Cost optimisation requires understanding usage patterns. By restricting yourself to internal metrics only, you can improve the "plumbing" but not the intelligent features that differentiate your platform. This approach is safer than using client data but doesn't provide the strategic value of the opt-in benchmarking programme or synthetic data generation approaches.`}
+      ],
+      competency:[4,8,5]
+    },
+    {
+      scenario:`2011 — The Coordination Tax: Restructuring Data Teams for Speed\n\nThe data organisation has grown to 300+ people across four functional teams: Data Engineering (builds pipelines), Data Science (builds models), Data Analytics (generates insights), and ML Operations (deploys and monitors models).\n\nEvery project requires coordination across all four teams. A new product feature — personalised email recommendations — takes 4 months from concept to launch:\n• 6 weeks waiting for data engineering to build the pipeline\n• 4 weeks for data science to build the model\n• 3 weeks for analytics to validate\n• 5 weeks for ML ops to deploy and monitor\n\nTeams are blocked waiting for each other, and handoffs introduce errors.\n\nThe VP of Engineering says: "Our competitors ship ML features in 6 weeks. We take 4 months. The problem isn't talent — it's coordination overhead."`,
+      question:`How should the CDO restructure the data organisation?`,
+      options:[
+        {text:`Reorganise into cross-functional "pods" — each pod contains a data engineer, data scientist, analyst, and ML ops engineer, all dedicated to a specific product area (recommendations, search, pricing). Each pod is led by a single-threaded owner responsible for one outcome only. Pods ship independently without cross-team coordination. Maintain a small central platform team that builds shared infrastructure (data warehouse, feature store, model serving) used by all pods.`, points:10, feedback:`The pod model directly addresses every problem in the scenario. Why 4 months became 4 months: sequential dependencies between teams. When engineering, science, analytics, and ops sit in the same pod, they work in parallel, not in sequence. The pipeline is being built while the model is being designed, and the deployment infrastructure is being prepared simultaneously. The single-threaded owner eliminates the "whose priority is this?" problem — one person, one goal, full accountability. The central platform team is crucial: without shared infrastructure, pods would each build their own data warehouse, feature store, and model serving — creating duplication and inconsistency. The platform team builds the roads; the pods drive the cars. This model typically reduces cycle time by 60-70% — the 4-month project becomes 5-6 weeks.`},
+        {text:`Keep the functional organisation but streamline handoffs. Create standardised interfaces between teams: data engineering outputs go into a standard format, data science models are packaged in standard containers, ML ops deploys using standard pipelines. Establish SLAs (data engineering delivers within 2 weeks of request). Automate handoffs where possible.`, points:5, feedback:`Standardised interfaces reduce friction but don't eliminate the fundamental problem: sequential dependencies. Even with perfect handoffs and SLAs, the project still moves through four teams in sequence. If data engineering commits to a 2-week SLA, that's still 2 weeks of waiting before data science can start. And SLAs create their own problems: teams optimise for meeting the SLA rather than for the project's success. "We delivered the pipeline in 2 weeks as promised" doesn't help if the pipeline doesn't have the features the data scientist needs. The root cause is structural: four teams with four managers and four sets of priorities trying to coordinate on one project.`},
+        {text:`Fully decentralise: embed data engineers, data scientists, and ML ops engineers directly into product teams. Eliminate the centralised data organisation entirely. Each product team owns its own data stack end-to-end. This eliminates coordination overhead completely.`, points:4, feedback:`Full decentralisation eliminates coordination overhead but creates worse problems. Without any central coordination: (1) Each product team builds its own data pipeline — 10 teams building 10 pipelines to the same data warehouse, wasting engineering effort. (2) No shared standards — the recommendations team uses one feature format, the search team uses another, making it impossible to share ML features. (3) No data governance — privacy policies, data quality standards, and access controls are implemented differently (or not at all) across teams. (4) Career paths disappear — a data scientist embedded alone in a product team has no data science peers to learn from. The pod model preserves team autonomy while maintaining the shared infrastructure and standards that prevent chaos.`},
+        {text:`Create a hub-and-spoke model: a central data platform team owns shared infrastructure (data warehouse, feature store, model serving), while smaller embedded teams in each business unit handle domain-specific work. The central team sets standards, builds tools, and ensures governance. Embedded teams have autonomy within those standards.`, points:8, feedback:`Hub-and-spoke is a strong model and close to the optimal answer. The central hub provides shared infrastructure and governance; the spokes provide domain expertise and speed. The main difference from the pod model is emphasis: hub-and-spoke still implies some separation between the hub team and the spoke teams, which can recreate coordination overhead in subtler forms. When the spoke team needs a new feature in the data warehouse, they file a request with the hub — and wait. The pod model avoids this by giving pods everything they need to ship independently, with the platform team providing infrastructure rather than services. Hub-and-spoke works well but may not fully solve the speed problem described in the scenario.`}
+      ],
+      competency:[9,3,0]
+    },
+    {
+      scenario:`2015 — Breaking Down Data Silos Across Five Business Lines\n\nThe company now operates five major businesses: e-commerce marketplace, cloud computing, digital streaming, smart home devices, and logistics. Each division has built its own data infrastructure over the years.\n\nThe CEO asks at a leadership meeting: "We have the richest customer dataset in the world, but our divisions act like separate companies. A customer who watches cooking shows on our streaming service gets zero cooking-related recommendations when they shop. Why?"\n\nThe division heads push back: "Cross-division data sharing creates privacy risks, slows down our individual teams, and blurs accountability. We move faster independently."`,
+      question:`Should the CDO build a unified data platform or keep division-specific infrastructure?`,
+      options:[
+        {text:`Build a federated data platform: each division maintains its own data infrastructure and retains ownership, but all divisions connect through a data mesh with standardised APIs and schemas. Cross-division insights are generated through a secure "insights layer" that queries across divisions without centralising raw data. Example: streaming genre preferences flow as "interest signals" to e-commerce — the shopping team sees the signal but never accesses raw streaming data. Implement strict access controls, data contracts, and audit trails.`, points:10, feedback:`The federated model elegantly resolves the CEO's complaint without creating the problems the division heads fear. Why it works: (1) Divisions keep their infrastructure and autonomy — no one is forced to migrate or slow down. (2) The insights layer provides the cross-business intelligence the CEO wants without moving raw data — streaming preferences become abstract "interest signals" that shopping can use. (3) Data contracts and standardised APIs create reliable interfaces without requiring identical systems. (4) Privacy risks are managed by sharing signals, not raw data — if the insights layer is breached, attackers get "cooking interest: high," not "watched 47 episodes of cooking shows." The key insight: you don't need centralised data to get centralised intelligence.`},
+        {text:`Build a fully centralised data lake where all division data flows into a single platform. A central data team manages access, governance, and cross-division analytics. This maximises the potential for cross-division insights but requires all divisions to adopt common schemas and standards.`, points:5, feedback:`Full centralisation maximises cross-division intelligence but creates the exact problems the division heads warned about. Migration to common schemas is a multi-year project that slows every division. A central data team becomes a bottleneck — when the streaming team needs a schema change, they wait in a queue behind requests from four other divisions. Privacy risks increase: all data in one place means a single breach exposes everything. And "blurred accountability" is real: when the central team owns the data, divisions lose the ability to iterate quickly on their own data needs. Centralisation works for small companies with 1-2 products. At the scale of 5 major business lines, it creates more problems than it solves.`},
+        {text:`Keep division-specific infrastructure but create a dedicated cross-division analytics team with read access to all divisions' data. When a cross-division opportunity is identified (streaming + shopping), they build a specific pipeline for that use case.`, points:6, feedback:`A cross-division analytics team is a reasonable starting point but doesn't scale. Each cross-division insight requires a custom pipeline — streaming to shopping, shopping to smart home, streaming to advertising. With 5 divisions, there are 10 possible pairwise connections, each requiring custom work. The team becomes a bottleneck: every division wants cross-division insights but the team has finite capacity. And "read access to all data" is a governance nightmare — one team with access to everything is exactly the risk the division heads warned about. The team provides value but is a tactical solution, not a strategic architecture.`},
+        {text:`Start with the two divisions with the highest cross-pollination potential (streaming and shopping), build a shared data layer between them as a proof of concept, then expand. Prove the value before investing in a company-wide platform.`, points:7, feedback:`Starting with a proof of concept is pragmatic and reduces risk. The streaming-shopping connection is the most obvious value proposition: viewing preferences directly inform product recommendations. But the "pilot first" approach has a limitation: the proof of concept might work perfectly at small scale (2 divisions, 1 data connection) but the architecture might not scale to 5 divisions with 10+ connections. If the pilot is designed as a two-division integration rather than a scalable platform, the company will need to rebuild when expanding. The CDO should design the proof of concept as the first implementation of the federated platform architecture — not as a standalone integration that gets replaced later.`}
+      ],
+      competency:[1,6,7]
+    },
+    {
+      scenario:`2014 — The ML Platform Decision: Build for Scale or Buy for Speed?\n\nThe company's ML teams process billions of events daily and need real-time model inference at single-digit millisecond latency. The current patchwork of tools — different teams using different frameworks, training pipelines, and deployment methods — is unsustainable.\n\nThe Head of ML Engineering proposes building a proprietary ML platform: "No existing tool handles our scale. We process more events in an hour than most companies process in a year."\n\nThe VP of Engineering counters: "Open-source ML frameworks have matured dramatically. We'd be spending $40M and 18 months building what open-source tools give us for free."`,
+      question:`What ML infrastructure strategy should the CDO recommend?`,
+      options:[
+        {text:`Build proprietary where it differentiates, use open-source where it doesn't. Custom-build the model serving layer (real-time inference at millisecond latency at massive scale — no open-source tool matches this). Use open-source frameworks for model training and experimentation, where the tools are mature. Build custom data pipelines that integrate with the proprietary serving layer. This hybrid maximises ROI: custom where it creates advantage, open-source where it's sufficient.`, points:10, feedback:`This is the textbook build-vs-buy answer for AI infrastructure at scale. The serving layer is the right place to build custom: at billions of events per day, single-digit millisecond latency requirements create engineering challenges that no open-source tool is optimised for. This is where proprietary infrastructure creates a measurable competitive advantage — faster inference means better user experience means more engagement means more data. Training and experimentation, by contrast, are well-served by open-source: TensorFlow/PyTorch are battle-tested, have massive community support, and evolve faster than any internal team could match. Building training infrastructure from scratch wastes $20M+ on reimplementing what exists. The hybrid approach costs roughly half of going fully proprietary while delivering 90% of the competitive benefit.`},
+        {text:`Go fully proprietary. At this scale, every component has unique requirements. Building everything in-house gives complete control and ensures all components work together seamlessly. The $40M cost is justified by the scale of ML-driven revenue (billions annually).`, points:5, feedback:`Full proprietary control sounds appealing but wastes resources on non-differentiating components. Custom training infrastructure does the same thing as PyTorch but worse (smaller team, fewer features, no community). Custom experiment tracking does the same thing as open-source alternatives but with higher maintenance cost. The $40M doesn't all create competitive advantage — perhaps $15M goes to the serving layer (genuine advantage) and $25M goes to reimplementing commodity tools (waste). The company's ML engineers should spend their time building better models, not maintaining infrastructure that open-source provides for free.`},
+        {text:`Use open-source frameworks everywhere and invest the $40M in hiring top ML engineers instead. The best engineers can make open-source tools work at any scale. Talent creates more competitive advantage than infrastructure — great people with good tools outperform average people with great tools.`, points:4, feedback:`Talent is essential, but the premise — that open-source tools work at any scale — is wrong at this company's scale. Open-source ML serving tools are designed for thousands of requests per second; this company needs millions per second at sub-10ms latency. No amount of engineering talent can make a tool designed for 10,000 QPS handle 1,000,000 QPS — it requires architectural changes that effectively mean building a custom system anyway. The $40M in hiring is valuable, but those engineers still need infrastructure that can handle the scale. The optimal approach: hire great people AND give them the right infrastructure (custom where necessary, open-source where sufficient).`},
+        {text:`Adopt a major competitor's managed ML platform. This gives a battle-tested, fully managed platform with no maintenance burden. The team can focus on model development rather than infrastructure. The company can always migrate later if needed.`, points:3, feedback:`Using a competitor's ML platform creates unacceptable strategic dependencies. The competitor gains visibility into the company's ML workloads (what models are being trained, how much compute is used, what features are being optimised). This is the same metadata intelligence concern that the company's own cloud clients worry about. Migration risk is also real: ML platforms create deep integration dependencies that make switching extremely costly. And "focus on models, not infrastructure" ignores that at this scale, infrastructure IS the competitive advantage — the ability to serve predictions at sub-10ms to billions of users is a moat, not a commodity.`}
+      ],
+      competency:[2,7,3]
+    },
+    {
+      scenario:`2016 — When Algorithms Know Your Willingness to Pay\n\nThe pricing team has built an AI model that predicts each customer's price sensitivity based on browsing history, purchase patterns, device type, location, and time of day. Tests show "personalised pricing" increases revenue by 12%.\n\nThe Head of Pricing is enthusiastic. But the CDO notices something in the data: the algorithm charges systematically higher prices to customers in lower-income areas who have fewer shopping alternatives. It also shows higher prices to mobile users (who can't easily comparison-shop) than desktop users.\n\nThe VP of Legal confirms: "Personalised pricing isn't technically illegal in most jurisdictions. But the optics of charging different customers different prices based on AI analysis of their personal data could be devastating."`,
+      question:`How should the CDO advise on AI-driven pricing?`,
+      options:[
+        {text:`Implement dynamic pricing with strict fairness constraints. Allow price variation based on real-time market factors (demand, competition, inventory levels, time) but prohibit variation based on individual user characteristics (location, income proxy, device type, purchase history). The same product has the same price for every customer at the same moment — prices can change over time but not across customers simultaneously. Monitor for disparate impact.`, points:10, feedback:`This is the principled, sustainable approach. Market-based dynamic pricing (prices change with supply and demand, like airline tickets) is well-understood and accepted by consumers. Individual-based pricing (prices change based on who you are) is discriminatory and, once exposed, toxic. The key distinction: "the price changed because demand is high" is acceptable. "The price changed because you're on a phone and live in a low-income area" is not. Monitoring for disparate impact is essential because even market-based factors can create discriminatory outcomes. If high-demand periods systematically correlate with when lower-income customers shop, the pricing still has a discriminatory effect. Fairness constraints catch these indirect effects.`},
+        {text:`Allow personalised pricing but cap the maximum price difference at 5%. Require transparency: show customers a price range for each product so they know pricing is dynamic.`, points:5, feedback:`Capping the difference reduces but doesn't eliminate the ethical problem. A 5% price difference sounds small, but across millions of transactions it's still systematically charging more to vulnerable populations. And transparency ("prices range from $47 to $51") actually makes it worse — customers will immediately ask "why am I seeing $51 while someone else sees $47?" The answer is "our AI determined you'd pay more based on your personal data," which is exactly the reputational disaster the VP of Legal warned about. Partial transparency without full accountability creates more distrust than opacity.`},
+        {text:`Proceed with full personalised pricing. Price discrimination — charging different prices based on willingness to pay — is a standard economic practice used by airlines, hotels, and insurance companies. The algorithm does what sophisticated businesses have always done, just more efficiently. As long as it's legal, maximise revenue.`, points:3, feedback:`This answer ignores context, optics, and long-term risk. Airlines and hotels discriminate based on when you buy and demand levels (market factors), not based on who you are (personal characteristics). Insurance pricing is heavily regulated precisely because individual-based pricing creates discrimination. "It's legal" is the floor, not the ceiling. When a journalist publishes "E-commerce giant charges poor customers more based on AI analysis," the 12% revenue gain is immediately offset by brand damage, regulatory investigation, and customer trust erosion. The CDO who advises "maximise revenue, it's legal" is optimising for next quarter at the expense of next decade.`},
+        {text:`Abandon dynamic pricing entirely. The reputational risk outweighs the 12% revenue gain. If customers discover they're being charged different prices based on AI analysis, the backlash could damage trust across all businesses. Use simple, transparent pricing with occasional promotions.`, points:6, feedback:`Abandoning dynamic pricing entirely throws out the baby with the bathwater. Market-based dynamic pricing (adjusting prices based on supply, demand, and competition) is valuable and ethically sound. The problem isn't dynamic pricing — it's individual-based pricing that uses personal characteristics to charge different people different prices. The CDO should preserve market-based pricing (which captures real value) while eliminating individual-based pricing (which creates ethical and reputational risk). Simple flat pricing leaves money on the table — if inventory is overstocked, discounting makes business sense for both the company and the customer.`}
+      ],
+      competency:[4,8,5]
+    },
+    {
+      scenario:`2017 — Mining the Subscription Goldmine: Cross-Service Intelligence\n\nThe company's subscription service has 100M+ members who use shopping, streaming, music, reading, and cloud storage. Each service generates rich behavioural data independently.\n\nThe CDO identifies cross-service opportunities:\n• Streaming preferences → shopping recommendations (cooking show fans → kitchen products)\n• Shopping patterns → content recommendations (baby product buyers → parenting content)\n• Music listening context → advertising targeting (workout playlists → fitness products)\n• Reading habits → professional development recommendations\n\nThe potential revenue impact is estimated at $2B annually from improved cross-service personalisation.\n\nThe Chief Privacy Officer warns: "Customers signed up for each service individually. Using their music data to influence their shopping experience wasn't part of the deal."`,
+      question:`How should the CDO design the cross-service data strategy?`,
+      options:[
+        {text:`Build a privacy-preserving cross-service intelligence layer. Don't share raw data between services — create an abstracted "interest graph" that converts specific behaviours into general interest signals. Watching cooking shows becomes "cooking interest: high." The shopping team sees the signal but never knows what shows the customer watched. Give customers a unified privacy dashboard to control what's shared. Make cross-service personalisation opt-in.`, points:10, feedback:`The interest graph approach is architecturally elegant: it captures the strategic value of cross-service data (understanding customer interests across contexts) without the privacy liability of sharing raw behavioural data. The abstraction layer is key: "cooking interest: high" is a useful signal for shopping recommendations but doesn't reveal what specific shows someone watched, which episode they paused, or when they watched it. The opt-in mechanism is essential for trust: customers who opt in get better recommendations and see the value. Customers who opt out lose nothing from their current experience. The privacy dashboard builds transparency and control — customers can see exactly what interest signals exist and delete them. The $2B opportunity is real, but only if it's built on trust. One scandal about "we used your music data to target you with ads" would destroy far more than $2B in brand value.`},
+        {text:`Fully integrate data across all services for subscription members. The subscription terms grant the company rights to use data across services for personalisation. Update the privacy policy to clearly state this. Most customers expect and want cross-service personalisation — they'd be frustrated if the company didn't use streaming preferences to improve shopping recommendations.`, points:5, feedback:`The assumption that "most customers want this" is risky. Some customers do — they'd love it if cooking show preferences triggered kitchen product recommendations. But others would be alarmed to learn that their music listening habits are being analysed to target them with advertising. The privacy policy update is legally protective but doesn't build trust — "we changed the policy to allow us to use your data across all our services" sounds like a power grab, not a customer benefit. Full integration also creates a massive data liability: a breach that exposes cross-service profiles reveals an intimate picture of customers' lives (what they buy, watch, listen to, and read) that's far more damaging than any single service's data alone.`},
+        {text:`Keep service data strictly siloed. Each service operates independently. The $2B opportunity is speculative, and the privacy risk is real. If a breach exposes cross-service profiles showing exactly how the company links music tastes to shopping behaviour to reading habits, the backlash would be devastating.`, points:4, feedback:`Complete silos are the safest privacy position but represent a significant strategic cost. The $2B estimate may be speculative, but the underlying principle is sound: a company that understands customers across five different contexts (shopping, streaming, music, reading, storage) has dramatically better insight than one that understands them in only one context. The question isn't whether to use cross-service data — it's how to do it responsibly. Strict silos leave the most valuable aspect of the subscription ecosystem untapped and concede a potential competitive advantage to any competitor willing to be slightly less conservative.`},
+        {text:`Start with a small pilot: cross-pollinate data between the two most complementary services (streaming and shopping) for opt-in members only. Measure revenue impact and customer sentiment over 6 months. If the pilot succeeds and customers respond positively, expand to other combinations.`, points:7, feedback:`A pilot is a pragmatic starting point. Streaming-to-shopping is the most obvious and defensible connection: "we noticed you watch cooking shows, here are some kitchen products you might like" is intuitive and valuable. Opt-in ensures consent. The 6-month timeline provides real data on both revenue impact and customer reaction. The limitation: a pilot between two services doesn't test the harder questions — like whether music-to-advertising feels creepy, or whether reading-to-professional feels intrusive. The CDO should design the pilot as the first implementation of the privacy-preserving interest graph, not as a standalone integration that needs to be rebuilt for other service pairs.`}
+      ],
+      competency:[1,0,6]
+    },
+    {
+      scenario:`2018 — Building a Data-Driven Culture at Scale\n\nThe company employs 600,000+ people. The data and AI team (5,000+) produces sophisticated analyses and models, but the CDO notices a persistent problem: business teams don't effectively use the insights.\n\nProduct managers request analyses then ignore recommendations. Operations teams override AI-optimised schedules with gut feeling. Marketing teams run campaigns without consulting the targeting models built for them.\n\nThe VP of HR suggests: "We need data literacy training for all employees."\n\nThe Head of Data Science disagrees: "Training 600,000 people to understand data is impossible. We need to embed the intelligence into tools so people use it without realising it."`,
+      question:`What talent and culture strategy should the CDO implement?`,
+      options:[
+        {text:`Deploy a three-pronged strategy: (1) Embed AI into tools — build intelligent defaults into every tool employees use: inventory ordering pre-filled with AI-optimised quantities, marketing platforms with built-in targeting, scheduling tools with AI-suggested staffing. Make the data-driven choice the easy choice. (2) Targeted data literacy — train 5,000 decision-makers (managers, product leads) on data interpretation, not statistics. (3) Data champions — identify one data-savvy person in each business unit to bridge between the data team and colleagues.`, points:10, feedback:`The three-pronged approach addresses all three failure modes. Embedded AI solves the "ignoring recommendations" problem by making the AI recommendation the default: when an operations manager opens the scheduling tool, the AI-optimised schedule is already there. They can override it, but inertia favours the data-driven choice. Targeted data literacy solves the "don't understand the output" problem: 5,000 decision-makers who can interpret dashboards and model outputs are far more effective than 600,000 people who completed a generic training. Data champions solve the "translation" problem: the champion in each business unit knows both the data team's language and the business team's context, bridging the gap that causes insights to be ignored. The key insight: you can't train everyone, so change the tools. You can't change all tools overnight, so train the decision-makers. You can't train all decision-makers deeply, so empower champions.`},
+        {text:`Focus entirely on embedding AI into tools. The Head of Data Science is right — training 600,000 people is impossible. Instead, make every tool intelligent by default. When a product manager opens the planning tool, AI-recommended features are pre-prioritised. When an operations manager reviews schedules, AI-optimised staffing is the default. Humans can override, but the AI recommendation is the starting point.`, points:7, feedback:`Embedded AI is the highest-leverage single intervention. Making the data-driven choice the default dramatically increases adoption: behavioural economics shows people rarely change defaults. But embedded-only misses two scenarios: (1) Novel decisions that don't have a tool — strategic planning, crisis response, new market entry. These require humans who can think with data, not just use tools that think for them. (2) Override quality — if managers can't interpret the AI's output, their overrides will be random rather than informed. A manager who understands why the AI suggested 15 staff members and overrides to 18 because of a local event is adding value. A manager who overrides to 12 because "it feels right" is destroying value. Training decision-makers helps them override wisely, not blindly.`},
+        {text:`Invest in comprehensive data literacy training. Create a tiered programme: basic data literacy for all employees, intermediate for managers, advanced for technical teams. Make completion mandatory for career advancement.`, points:4, feedback:`Comprehensive training sounds thorough but is impractical and ineffective at this scale. Training 600,000 people in data literacy is a multi-year, multi-hundred-million-dollar initiative with uncertain returns. Research consistently shows that mandatory training changes knowledge but not behaviour — people pass the test and return to their existing habits. The problem isn't that operations managers can't read a chart; it's that reading the chart requires effort while following gut feeling is effortless. Training doesn't change the effort equation — embedded AI does. Targeted training for the 5,000 people who make the highest-impact decisions is far more cost-effective than broad training for everyone.`},
+        {text:`Hire more data translators — people who speak both "data" and "business." Place one in every major business unit. Their job: take insights from the data team and translate them into specific, actionable recommendations. If the model says "23% churn risk for segment X," the translator says "call these 500 customers this week and offer them 20% off renewal."`, points:6, feedback:`Data translators are valuable but don't scale. At a company with dozens of business units, hiring enough translators to cover every team requires a significant investment — and the translators become bottlenecks. When three teams need translation simultaneously, they queue. Translation also adds latency: insight generated Monday, translated Wednesday, acted on Friday. And it creates dependency: if the translator leaves or is overloaded, the business unit reverts to ignoring data. The data champion model is more scalable: instead of hiring specialised translators, identify existing employees in each unit who are data-curious and give them the tools and training to bridge the gap. They're already embedded in the team and understand the context.`}
+      ],
+      competency:[9,5,3]
+    }
+  ],
+  2: [
+    {
+      scenario:`2011 — Designing Data Architecture for a Growing Empire\n\nAn e-commerce company is expanding beyond online retail into cloud computing, logistics, and digital content. Each new business line is being built by autonomous teams that move fast and make independent technology decisions.\n\nThe CTO argues: "Let each team choose their own data stack. We move faster when teams are independent. Standardisation slows innovation."\n\nThe CDO sees a different risk: "If every business line builds a separate data island, we'll never create cross-business intelligence. In 5 years, we'll have 10 incompatible data systems."\n\nCurrent state: the e-commerce team uses one database, the logistics team uses another, and the new cloud division is building from scratch. No shared data catalogue, no common schema, no way to link a customer across businesses.`,
+      question:`How should the CDO architect data across multiple business lines?`,
+      options:[
+        {text:`Establish a "minimal viable standard" — don't force technology choices, but require all business lines to: (1) use a common customer identifier so the same customer can be recognised across businesses, (2) publish data schemas to a shared catalogue so other teams know what data exists, (3) expose key datasets through standardised APIs for cross-business queries. Let teams choose their own databases, tools, and pipelines. The standard is about interoperability, not uniformity. Invest in a lightweight data mesh that connects the islands without merging them.`, points:10, feedback:`The minimal viable standard is the architecturally correct answer because it resolves the tension between autonomy and integration. The CTO is right that standardisation slows teams — but only if "standardisation" means forcing common technology choices. The CDO is right that data islands prevent cross-business intelligence — but only if there's no interoperability layer. The three requirements (common ID, shared catalogue, standardised APIs) are lightweight enough that teams barely feel the constraint, but powerful enough to enable cross-business queries. The common customer ID is the single most important decision: without it, the company can never answer "what does this customer do across our businesses?" The data mesh architecture scales because adding a new business line means connecting one more node to the mesh, not migrating to a central system.`},
+        {text:`Build a centralised data warehouse that all business lines feed into. Require standard schemas, standard ETL processes, and a central data governance team. This ensures consistency from day one and prevents the "10 incompatible systems" problem.`, points:5, feedback:`Centralised data warehousing ensures consistency but at the cost of speed and autonomy. Requiring all business lines to adopt standard schemas means the cloud computing team (whose data looks nothing like e-commerce data) must force their data into a schema designed for retail transactions. Standard ETL processes mean the logistics team (which needs real-time data) must wait for the same batch process as the content team (which needs daily aggregates). The central governance team becomes a bottleneck: every schema change, every new data source, every access request goes through a queue. At the pace these business lines are growing, the central team will be overwhelmed within a year.`},
+        {text:`Let each business line build independently now, but plan to consolidate later. The CTO is right that speed matters early. Once each business is established (2-3 years), invest in integrating the systems. The cost of retroactive integration is worth the speed gains now.`, points:3, feedback:`"Consolidate later" is the most expensive option disguised as the cheapest. After 3 years of independent development: 4 business lines have 4 different customer ID systems (millions of customers with different IDs in each system), 4 different schema conventions (the same "transaction" means different things in each system), and 4 different data pipelines (each with different latency, quality, and governance standards). Retroactive integration at this scale is a multi-year, multi-hundred-million-dollar project that disrupts every business line simultaneously. The minimal viable standard costs a fraction of this and prevents the problem entirely. "Later" in data architecture always means "10x more expensive."`},
+        {text:`Build a shared data lake that all businesses write to and read from, but let each business maintain its own processing infrastructure. The data lake is a central repository while teams retain operational independence. Common tools like schema enforcement and data quality checks apply to all incoming data.`, points:7, feedback:`A shared data lake is a reasonable middle ground. It provides a single place where cross-business analysis is possible (answering the CEO's question about cross-business customer behaviour) while letting teams maintain their own processing pipelines. The key challenges: (1) Data lake governance — who decides the schema for shared data? Without governance, the lake becomes a "data swamp" of inconsistent, undocumented datasets. (2) Performance — a single lake serving real-time queries from logistics alongside batch analytics from content creates resource contention. (3) The lake approach still requires a common customer ID to link data across businesses. The data lake works but requires more infrastructure investment and governance overhead than the data mesh approach.`}
+      ],
+      competency:[1,0,8]
+    },
+    {
+      scenario:`2013 — From Batch to Real-Time: The Personalisation Speed Challenge\n\nThe platform serves 200M active customers. Currently, product recommendations update via a batch process that runs overnight — a customer who buys a tent at 10am still sees tent recommendations until the next morning.\n\nThe Head of Product presents data: "Customers who get real-time recommendations (within their current session) have 35% higher conversion. That's worth $3B annually."\n\nThe Chief Architect warns: "Real-time personalisation at 200M users means processing 50,000 events per second and returning recommendations in under 200 milliseconds. That's a fundamentally different architecture from our batch system. We're talking about a 2-year, $80M infrastructure rebuild."`,
+      question:`What real-time personalisation architecture should the CDO design?`,
+      options:[
+        {text:`Build a hybrid architecture: keep the batch system for baseline recommendations (updated nightly with full historical data) and layer a real-time system on top that adjusts recommendations based on the current session. The real-time layer processes only session events (clicks, searches, cart adds) and modifies batch recommendations — it doesn't replace them. This gets 80% of the real-time benefit at 30% of the cost. Deploy incrementally: start with high-traffic pages, measure revenue impact, expand.`, points:10, feedback:`The hybrid approach is architecturally elegant because it plays to each system's strength. The batch system is excellent at incorporating full historical patterns (years of purchase data, seasonal trends, long-term preferences) but slow to reflect current behaviour. The real-time layer is excellent at capturing immediate intent (customer just added a tent to cart, stop showing tents, start showing sleeping bags) but has limited context (only the current session). Together: historical context + real-time responsiveness. The 80/30 ratio (80% of value at 30% of cost) is realistic: the biggest personalisation improvement comes from the first real-time signal (what the customer is doing right now), not from sub-millisecond optimisation. Starting with high-traffic pages concentrates the investment where it has the highest revenue impact.`},
+        {text:`Commit to the full $80M architecture rebuild. The $3B annual opportunity justifies the investment. Build a complete real-time event processing pipeline. Replace the batch system entirely. This is expensive but positions the company for the next decade.`, points:6, feedback:`The financial argument is sound ($80M investment for $3B return is excellent ROI) but the execution risk is high. A 2-year, $80M infrastructure rebuild that replaces the production recommendation system is one of the highest-risk projects the company could undertake. If the new system has issues at launch, recommendation quality degrades for 200M customers, directly impacting revenue. The "replace entirely" approach also discards the batch system's strength: incorporating deep historical patterns. The best real-time systems supplement historical analysis, not replace it. The phased hybrid approach delivers most of the value with a fraction of the risk.`},
+        {text:`Optimise the batch system: increase update frequency from once daily to every 2 hours. This gets recommendations "close enough" to real-time at a fraction of the cost. Most customers won't notice the difference between 2-hour-old and truly real-time recommendations.`, points:4, feedback:`Increasing batch frequency from 24 hours to 2 hours is a modest improvement that doesn't solve the core problem. The scenario describes a customer buying a tent at 10am and seeing tent recommendations all day. With 2-hour batches, they'd see tent recommendations for up to 2 hours — better, but still a poor experience. More importantly, 2-hour batches don't capture session-level intent: a customer browsing camping gear RIGHT NOW would wait up to 2 hours for recommendations to reflect that behaviour. The 35% conversion lift comes from responding to what customers are doing in the moment, not from slightly fresher batch data. The architecture should handle real-time signals, not just faster batches.`},
+        {text:`Use a pre-computation approach: for each customer, pre-compute personalised recommendations for thousands of possible "next actions" and cache them. When a customer adds a tent to their cart, serve the pre-computed "just bought outdoor gear" recommendations instantly. Real-time speed without real-time processing.`, points:5, feedback:`Pre-computation achieves real-time speed for predicted scenarios but fails for unpredicted ones. At 200M customers and thousands of possible next actions each, the pre-computation matrix is enormous: hundreds of billions of recommendation sets to compute and cache. Storage costs scale with every new product category and customer segment. And the approach is brittle: if a customer does something unexpected (searches for a product category they've never browsed), there's no pre-computed recommendation set for that scenario. Real-time systems handle the unexpected gracefully; pre-computation handles only what was anticipated. The approach works for the most common scenarios but requires a real-time fallback for everything else — at which point, you're building the hybrid system anyway.`}
+      ],
+      competency:[7,1,3]
+    },
+    {
+      scenario:`2014 — The Data Monetisation Dilemma: Should We Sell Our Data?\n\nThe company has accumulated the world's most comprehensive e-commerce dataset: purchase patterns across 400M products, shipping logistics across 50,000 routes, seasonal demand curves, and pricing trends across millions of sellers.\n\nA VP proposes creating a data marketplace: "Consumer brands would pay millions for our purchase trend data. Market researchers want our pricing intelligence. We could build a $5B revenue stream."\n\nThe Chief Privacy Officer pushes back: "Even anonymised data can be re-identified. Customers didn't consent to their data being sold."\n\nThe Head of Strategy adds: "If we sell our data insights, we're arming our competitors with intelligence that currently gives us an advantage."`,
+      question:`Should the CDO support building a data marketplace?`,
+      options:[
+        {text:`Do not sell raw data or detailed insights. Instead, build data-powered tools and services that benefit from the data without exposing it. Examples: a demand forecasting tool for sellers (powered by purchase data but not revealing it), an advertising platform using purchase intent signals (advertisers get targeting but never see the data), a logistics optimisation API (built on shipping data). The data stays proprietary; the intelligence is monetised through products.`, points:10, feedback:`This is the strategically optimal approach: monetise the intelligence, never the data. Products built on proprietary data have three advantages over raw data sales: (1) Higher margins — a demand forecasting tool charges for value delivered, not data volume. (2) Competitive protection — sellers using the forecasting tool get better at selling on YOUR platform, not on competitors'. (3) Data retention — the raw data never leaves your systems, preserving the competitive advantage for internal use. The advertising platform is the most obvious example: the company doesn't sell customer purchase data to advertisers. Instead, it offers "show this ad to people likely to buy kitchen appliances" — the advertiser gets targeting capability without seeing any data. This model has created massive revenue streams for other platforms without compromising data assets.`},
+        {text:`Build the marketplace but with strict controls: only sell highly aggregated, category-level data that cannot be linked to individual customers or sellers. Establish a data review board that approves every dataset before listing. The revenue opportunity is real and manageable with proper controls.`, points:6, feedback:`Aggregated category-level data ("kitchen appliance sales grew 15% in Q3") is low-risk but also low-value. Brands and market researchers can get category-level trends from industry reports and market research firms — they don't need to buy it from an e-commerce platform. The data that would command premium prices is granular: which specific products are trending, which price points maximise conversion, which search terms predict purchase intent. But granular data is exactly what creates competitive and privacy risks. The data review board adds governance overhead without solving the fundamental tension: the most valuable data is the most dangerous to sell.`},
+        {text:`Reject the marketplace entirely. The company's data is its most valuable competitive asset. Selling it in any form reduces the advantage. The $5B estimate is speculative, while the competitive risk is concrete. Focus on using data internally to build better products.`, points:7, feedback:`Rejecting raw data sales is strategically sound — but rejecting data monetisation entirely leaves money on the table. The data can be monetised without being sold: data-powered tools, advertising platforms, and analytics services all convert data into revenue without exposing the underlying asset. The "keep it all internal" approach is defensible but suboptimal — the company should be converting its data advantage into revenue through products and services, not just using it for internal improvement.`},
+        {text:`Build the marketplace and go big. The data is a strategic asset that's under-monetised. With proper anonymisation, privacy risks are manageable. The $5B+ revenue would create a high-margin business line. Other companies have built massive businesses selling data — there's a proven playbook.`, points:3, feedback:`The "proven playbook" comparison is misleading. Credit bureaus and market research firms were built from the ground up as data businesses — their customers expect their data to be shared (that's the service). An e-commerce platform's customers expect their data to be used to improve their shopping experience, not sold to third parties. And "proper anonymisation" is increasingly inadequate: research consistently shows that anonymised datasets can be re-identified by combining with other data sources. The $5B revenue estimate ignores the cost: competitive intelligence handed to rivals, privacy regulatory risk, and trust erosion among customers who learn their purchase data is for sale. The company's data is worth far more as an internal competitive asset than as a product for sale.`}
+      ],
+      competency:[4,8,6]
+    },
+    {
+      scenario:`2016 — The Warehouse Data Goldmine: Beyond Immediate Efficiency\n\nThe company has deployed 100,000+ robots across fulfilment centres worldwide. These robots generate 30TB of data daily: movement patterns, picking accuracy, inventory scanning, spatial mapping, collision avoidance decisions, and maintenance sensor readings.\n\nCurrently, the robotics team uses this data for immediate operational optimisation: route efficiency, picking speed, and maintenance scheduling.\n\nThe CDO sees a larger opportunity — the data could be used to:\n(1) Train general-purpose warehouse robotics AI models\n(2) Build a "robotics-as-a-service" platform for other companies\n(3) Create a data-driven warehouse design service\n(4) Develop predictive models for supply chain disruptions`,
+      question:`How should the CDO leverage the robotics data beyond immediate operations?`,
+      options:[
+        {text:`Pursue all four opportunities in a staged sequence based on strategic value. Phase 1 (immediate): enhance operational optimisation with predictive models that anticipate equipment failures 48 hours in advance. Phase 2 (6-12 months): train general-purpose warehouse AI models — this creates proprietary AI that competitors can't replicate without the same data volume. Phase 3 (12-24 months): explore robotics-as-a-service by licensing the AI models (not the raw data) to logistics partners. Throughout: keep raw data proprietary — license the intelligence, never the data.`, points:10, feedback:`Staged execution with clear priorities is the right approach. Phase 1 (predictive maintenance) delivers immediate, measurable ROI: preventing equipment failures saves millions in downtime costs and is easy to justify to the CFO. Phase 2 (general-purpose AI) is the strategic play: 30TB per day of real-world robotics data is an asset no competitor, academic lab, or startup can replicate. Training general-purpose warehouse AI on this data creates a proprietary capability that compounds — every day adds more training data, making the models better. Phase 3 (robotics-as-a-service) follows the pattern that created the company's cloud computing business: take an internal capability and offer it externally. The critical rule — "license the intelligence, never the data" — protects the competitive advantage. Customers get better warehouse operations; the company retains the underlying data moat.`},
+        {text:`Focus exclusively on internal operational optimisation. The robots generate massive efficiency gains when the data is used well. Rather than spreading resources across speculative external opportunities, go deep on internal use: predictive maintenance, workflow optimisation, demand-driven inventory positioning. The ROI is clear and immediate.`, points:6, feedback:`Internal optimisation is the safest and most immediate value — but it's thinking too small. The company has a unique asset (30TB/day of real-world robotics data) that no competitor can replicate. Using it only for internal efficiency is like having a gold mine and only mining the surface. The general-purpose AI opportunity and the robotics-as-a-service opportunity are not speculative — they follow the exact playbook that turned internal computing infrastructure into a massive cloud business. The CDO who focuses only on internal use misses the platform opportunity.`},
+        {text:`Prioritise the robotics-as-a-service platform immediately. Take internal warehouse AI capabilities and license them to logistics partners. This follows the company's own cloud computing playbook: turn internal capability into external revenue.`, points:5, feedback:`The cloud computing analogy is apt, but jumping straight to external licensing skips essential steps. The current AI models are optimised for the company's specific warehouses, robots, and workflows. Generalising them for other companies' environments requires significant additional development. And licensing externally before maximising internal value means external customers might get better warehouse AI than the company's own fulfilment centres. The right sequence: perfect the internal models first (Phase 1-2), then generalise for external use (Phase 3). Building the cloud business followed the same pattern: internal infrastructure was world-class before it was offered externally.`},
+        {text:`Create a dedicated robotics AI research lab. The 30TB of daily data is unique in the world. Fund a research team to push the boundaries of warehouse robotics AI. Publish select findings to attract top AI talent. The long-term strategic value of being at the frontier of robotics AI is incalculable.`, points:4, feedback:`A research lab is valuable for long-term positioning but doesn't address the immediate opportunities. Research labs produce papers and prototypes; production systems produce revenue and competitive advantage. The 30TB of data should be used to build production AI that delivers measurable business impact, not primarily for academic research. Publishing findings also has a competitive cost: it teaches competitors how to build similar systems (they just need the data to train them). A small research function embedded within the production team is fine — a standalone lab that prioritises research over deployment is a misallocation of a unique asset.`}
+      ],
+      competency:[0,1,6]
+    },
+    {
+      scenario:`2018 — Redesigning for Privacy: When the Rules Change\n\nNew privacy regulations are being enacted globally. The company's data architecture — built over a decade for maximum data collection — faces compliance challenges:\n• Customers must be able to request deletion of all data within 30 days\n• The company must justify collection of each data point ("purpose limitation")\n• Data cannot be used for purposes beyond what was disclosed at collection\n\nThe legal team wants to minimise data collection: "Every byte is a liability."\n\nThe product team argues: "Our recommendation engine needs comprehensive behavioural data. Cut our data, and conversion rates plummet — costing billions."\n\nThe CDO must find a path that satisfies both.`,
+      question:`How should the CDO redesign the data architecture for a privacy-first world?`,
+      options:[
+        {text:`Implement a "data purpose architecture": tag every data point at collection with its approved purposes. Build automated pipelines that enforce purpose limitations — data tagged for "order fulfilment" cannot be accessed by the recommendation engine. Create tiered retention: transaction data for 7 years (legal), behavioural data for 18 months (sufficient for ML), session data for 30 days. Build a "right to deletion" system that purges all customer data across all systems within 72 hours. Invest in privacy-preserving ML techniques (differential privacy, federated learning) to maintain model quality with less individual-level data.`, points:10, feedback:`The data purpose architecture transforms privacy from a constraint into a design principle. Purpose tagging at collection creates automatic enforcement: the system itself prevents misuse, not just policies that humans must follow. This is defence in depth — even if someone tries to access recommendation data for a different purpose, the technical controls prevent it. Tiered retention is pragmatic: keeping transaction data for 7 years satisfies legal requirements while keeping behavioural data for only 18 months limits liability. The 18-month window is sufficient for ML model training — models trained on 18 months of behaviour perform nearly as well as those trained on 5 years. Privacy-preserving ML is the strategic differentiator: differential privacy and federated learning allow the company to maintain recommendation quality while collecting less individual-level data. The 72-hour deletion SLA (faster than the 30-day requirement) demonstrates proactive compliance.`},
+        {text:`Minimise data collection to the legal minimum. Stop collecting browsing behaviour, search history, and interaction data. Keep only transaction data required for order fulfilment. Rebuild the recommendation engine to work with transaction data alone. Accept the conversion rate impact — compliance is more important than optimisation.`, points:4, feedback:`Minimal collection satisfies compliance but unnecessarily destroys business value. The regulations require purpose limitation and deletion rights — they don't require stopping data collection entirely. Browsing behaviour collected with clear disclosure ("we use your browsing data to personalise your shopping experience") and consent is perfectly compliant. The recommendation engine degradation would be severe: transaction data alone captures what customers bought but not what they considered, searched for, or compared. The resulting recommendations would regress to "customers who bought X also bought Y" — the same basic system the company used a decade ago. Compliance and personalisation are not mutually exclusive if the architecture is designed correctly.`},
+        {text:`Build a consent management platform giving customers granular control. Let them choose: "share browsing data for better recommendations" vs. "share only purchase data." Use consented data for personalisation. Customers who opt out get a generic experience.`, points:7, feedback:`Consent management is a strong component of privacy compliance. Granular controls empower customers and demonstrate respect for data autonomy. The challenge: if 30% of customers opt out of behavioural data sharing, the recommendation engine has 30% less training data. Worse, the opt-outs may be systematically different from opt-ins (privacy-conscious customers tend to be higher-value), creating a biased dataset. The consent platform is necessary but insufficient — it needs to be paired with privacy-preserving ML techniques that maintain model quality even when some customers opt out. The consent-based approach should be one layer of the overall privacy architecture, not the entire solution.`},
+        {text:`Move to an anonymisation-first architecture. All customer data is anonymised within 24 hours. Behavioural patterns become anonymous profiles that can't be linked back to individuals. Deletion requests are automatically satisfied because no identifiable data persists beyond 24 hours.`, points:5, feedback:`Anonymisation-first sounds elegant but has two significant problems. First, modern anonymisation research shows that behavioural profiles — even without names or emails — can often be re-identified by combining with external data. A unique browsing pattern across 10,000 products is effectively a fingerprint. Second, many valuable ML applications require identified data: personalised recommendations need to know THIS customer's history, not an anonymous profile's. If the company can't link a customer's current session to their historical behaviour, the recommendation engine can only personalise based on the current session — losing years of accumulated preference data. Anonymisation is appropriate for aggregate analytics and model training but insufficient for real-time personalisation.`}
+      ],
+      competency:[4,1,8]
+    },
+    {
+      scenario:`2015 — Three Recommendation Engines, One Company: The AI Turf War\n\nThree divisions have independently built recommendation engines:\n• Shopping team: collaborative filtering on purchase data (150M users)\n• Streaming team: deep learning on viewing data (80M users)\n• Advertising team: gradient-boosted trees on click data (200M users)\n\nAll three compete for the same GPU cluster (80% utilised, causing training delays) and recruit from the same ML talent pool (poaching each other with counter-offers).\n\nThe CTO asks the CDO to resolve the situation.\n\nThe streaming team's leader warns: "If you centralise our ML infrastructure, our best engineers will leave. They joined because we gave them autonomy."`,
+      question:`How should the CDO resolve the competing AI teams?`,
+      options:[
+        {text:`Create a shared ML platform layer while preserving team autonomy on model architecture. Build a common GPU cluster at 3x current capacity with fair allocation (priority based on business impact). Establish shared infrastructure (data pipelines, feature stores, experiment tracking, model deployment) that all teams use. But let each team choose their own model architecture. Cross-pollination happens naturally when teams share infrastructure and can see each other's experiments. Hold monthly "ML guild" sessions for knowledge sharing.`, points:10, feedback:`This approach resolves the resource conflict without triggering the autonomy fears. The 3x GPU capacity eliminates the zero-sum competition: no team needs to fight for resources. Shared infrastructure (feature stores, deployment pipelines) eliminates duplicated work without constraining model choices. Letting each team keep their architecture preserves the creative autonomy that attracts and retains top ML talent. The ML guild creates organic knowledge sharing — when the streaming team's deep learning approach consistently outperforms on a shared leaderboard, other teams naturally adopt it. Forced consolidation would have the opposite effect: resentment, departures, and worse models. The infrastructure constraint was the problem; the model diversity was a strength.`},
+        {text:`Consolidate all recommendation work into a single "Recommendations" team serving all three business lines. This eliminates duplication, resolves GPU conflicts, and ensures consistency. The best engineers from each team join the consolidated team.`, points:4, feedback:`Consolidation sounds efficient but destroys what makes the teams effective. Shopping recommendations optimise for purchase conversion; streaming recommendations optimise for watch time; advertising recommendations optimise for click-through rate. These are fundamentally different optimisation targets that require different model architectures and different expertise. A single team serving three masters will optimise for none. The "best engineers from each team" won't join willingly — the streaming lead warned that engineers will leave if autonomy is removed. Forced consolidation loses the talent that makes the models good. And the consolidated team becomes a bottleneck: every business line queues for recommendation improvements from one team instead of driving their own.`},
+        {text:`Run a 3-month bake-off: test all three approaches head-to-head on the same metric. The winning approach becomes the standard. This is meritocratic and evidence-based.`, points:5, feedback:`A bake-off sounds fair but the premise is flawed: there's no single metric that measures recommendation quality across shopping (purchase conversion), streaming (engagement time), and advertising (click-through rate). Each model is optimised for a different objective because each business has different success criteria. Forcing all three onto one metric either favours one business line or uses an artificial metric that none of the teams actually care about. And "the winner becomes the standard" assumes one approach is universally superior — but collaborative filtering might genuinely be better for shopping while deep learning is better for streaming. The diversity of approaches isn't a problem to solve; the resource contention is.`},
+        {text:`Keep the three teams independent but establish a shared services agreement: allocate GPU resources based on quarterly business impact projections, create a common dataset registry so teams can access each other's data, and ban internal poaching. This preserves autonomy while addressing resource conflicts.`, points:7, feedback:`Shared services address the symptoms (GPU contention, talent poaching) without building the underlying platform. Quarterly GPU allocation based on business impact projections creates political battles: each team will inflate projections to secure more resources. The dataset registry is valuable but incomplete — without shared feature stores, teams still duplicate feature engineering work. The poaching ban is heavy-handed and potentially counterproductive: it prevents natural talent flow between teams, which is one of the mechanisms for knowledge sharing. The shared ML platform approach solves these problems structurally: enough GPUs for everyone (no allocation battles), shared features (no duplication), and organic knowledge sharing through shared infrastructure and guild meetings.`}
+      ],
+      competency:[9,2,5]
+    },
+    {
+      scenario:`2017 — What Is Our Data Actually Worth?\n\nThe company's market capitalisation is $500B, but its balance sheet shows only $100B in tangible assets. Analysts attribute much of the difference to data and AI capabilities.\n\nThe CFO asks: "We spend $2B annually on data infrastructure and AI. The board wants to know: what is our data worth? How do we measure whether our data advantage is growing or shrinking?"\n\nThe CDO considers valuation approaches:\n• Replacement cost: what would it cost to recreate the dataset?\n• Revenue attribution: what revenue is directly attributable to data features?\n• Competitive advantage: what premium does data add to market position?\n• Licensing value: what would the data be worth if sold?`,
+      question:`How should the CDO quantify the value of the company's data assets?`,
+      options:[
+        {text:`Create a "Data Value Dashboard" tracking multiple dimensions quarterly. (1) Revenue attribution: A/B test data-driven features against non-data baselines to measure revenue lift. (2) Cost avoidance: quantify savings from data-driven decisions (optimised inventory, predictive maintenance, fraud prevention). (3) Competitive metrics: track how long a new entrant would need to accumulate equivalent data (the "data moat"). (4) Compounding rate: measure whether the data advantage is growing or stagnating. Don't put a single dollar figure on "data value" — show the board a multidimensional view.`, points:10, feedback:`The multidimensional dashboard is the right framework because data value is inherently multidimensional. Revenue attribution through A/B testing is the most rigorous metric: comparing personalised vs. random recommendations isolates the exact revenue lift from data. Cost avoidance captures operational value that revenue attribution misses: predictive maintenance preventing a $50M warehouse shutdown doesn't show up as revenue but is real value. The competitive moat metric addresses the board's strategic question: is our data advantage growing? If the data moat was "5 years of accumulation" last year and "6 years" this year, the advantage is compounding. Avoiding a single dollar figure is wise: any number will be wrong, and the board will anchor on it. A dashboard showing trends across four dimensions gives the CFO the financial rigour they want while giving the board strategic context.`},
+        {text:`Focus on revenue attribution only. Run controlled experiments to measure the exact revenue impact of every data-driven feature. Add them up: the data is worth the sum of its measurable impact. This is the most defensible approach — the CFO can verify every number.`, points:6, feedback:`Revenue attribution is the most defensible single metric but dramatically undervalues the data. Measurable revenue impact captures what data does today — it doesn't capture what data enables tomorrow. The AI platform that will power next year's product launches isn't generating revenue today but has enormous strategic value. Similarly, the data moat (years of accumulated customer behaviour that competitors can't replicate) has competitive value that doesn't show up in current revenue. Revenue attribution answers "what is our data doing?" but not "what is our data worth?" The CFO needs both.`},
+        {text:`Calculate replacement cost: what would it cost to recreate the dataset from scratch? How many years of customer interactions, how many transactions, how much to acquire that data through other means? This gives the most impressive number and frames data as an irreplaceable strategic asset.`, points:4, feedback:`Replacement cost is a thought exercise, not a valuation method. "It would cost $50B and 15 years to recreate our dataset" is technically interesting but strategically useless. The board doesn't care what it would cost to recreate — they care what the data is worth in terms of revenue generated, costs avoided, and competitive advantage sustained. Replacement cost also doesn't account for whether the data is being used effectively. A company could have a $50B-replacement-cost dataset sitting unused in a data lake, generating zero value. The number sounds impressive in a presentation but doesn't answer the CFO's real question: "Is our $2B annual investment generating adequate returns?"`},
+        {text:`Benchmark against competitors' spending and capabilities. If the company spends $2B on data and AI with demonstrably better capabilities, the incremental value is reflected in superior metrics. The data advantage is worth whatever premium those metrics generate over competitors.`, points:5, feedback:`Benchmarking provides useful context but doesn't measure value. Spending more doesn't mean generating more value — a competitor spending $1B with better talent and architecture might get more from their data than the company gets from $2B. And benchmarking assumes competitor data is publicly available, which it rarely is in detail. The approach also conflates spending (input) with value (output). The board wants to know the return on the $2B investment, not how it compares to competitors' spending. Use benchmarks as one data point in the dashboard, not as the primary valuation methodology.`}
+      ],
+      competency:[3,5,6]
+    },
+    {
+      scenario:`2019 — The Seller Data Controversy\n\nThe company's e-commerce marketplace hosts millions of third-party sellers. These sellers list products, set prices, and build customer bases on the platform. The company has access to all seller data: bestselling products, pricing, regional demand, seasonal patterns.\n\nA journalist investigation reveals that an internal team used individual seller data — specifically, one seller's bestselling product data — to launch a competing private-label product at a lower price.\n\nThe CEO calls an emergency meeting. The stock drops 3%. Regulators announce an investigation. The Head of Private Label argues: "We used publicly visible data — bestseller rankings, pricing, reviews." The CDO knows the internal data was far more detailed than what's publicly visible.`,
+      question:`What data governance policy should the CDO establish for third-party seller data?`,
+      options:[
+        {text:`Establish an absolute firewall between marketplace data and private-label teams. Private-label decisions must be based exclusively on: (1) publicly available market research, (2) customer demand signals from search data (what customers search for but can't find — gaps in the marketplace). Never individual seller data. Implement technical access controls so private-label teams physically cannot access seller data. Create an independent compliance team that audits data access quarterly. Publish the policy so sellers know their data is protected.`, points:10, feedback:`The absolute firewall is the only answer that addresses the root cause and restores trust. The controversy isn't about whether the data used was "technically public" — it's about whether the platform operator has an unfair advantage over the sellers who depend on it. The firewall must be technical, not just policy: if private-label teams CAN access seller data, someone eventually WILL. Technical access controls make misuse impossible, not just forbidden. The "demand signals from search data" exception is strategically important: if customers search for "organic dog treats" and few sellers offer them, that's a legitimate market gap for a private label — identified through customer behaviour, not seller exploitation. The public policy announcement is essential for rebuilding seller trust: sellers need to know (and verify) that their competitively sensitive data is protected. Without seller trust, the marketplace ecosystem erodes.`},
+        {text:`Allow access to aggregated category-level data but firewall individual seller data. Private-label teams can see "kitchen gadgets grew 25% this year" but not "Seller X's garlic press sold 500,000 units at $15." Aggregation provides market intelligence without targeting specific sellers.`, points:7, feedback:`Category-level aggregation is a reasonable middle ground. It gives private-label teams legitimate market intelligence while protecting individual sellers. The challenge: aggregation thresholds matter. "Kitchen gadgets" is broad enough, but "silicone garlic presses" might have only 3 sellers — and aggregated data from 3 sellers effectively reveals individual performance. The CDO would need to set minimum aggregation thresholds (category must have 50+ sellers before private-label teams can access aggregated data) and audit for de-aggregation attempts. This approach is defensible but harder to communicate simply — "we use aggregated data" sounds less trustworthy than "we never use seller data, period."`},
+        {text:`Continue using all available data but implement a "fair competition" policy: when launching a private-label product, give the existing top seller 90 days' notice and offer them preferential placement or a brand partnership. This acknowledges the tension but tries to create a win-win.`, points:3, feedback:`This policy doesn't address the fundamental problem — it just notifies sellers before exploiting their data. "We're going to use your sales data to launch a competing product, but we'll tell you 90 days in advance" doesn't resolve the trust violation. The 90-day notice might even make it worse: the seller knows the platform is using their data against them and can do nothing about it except leave — which is exactly the behaviour that degrades the marketplace ecosystem. The "brand partnership" offer sounds like a consolation prize. Regulators investigating the current scandal would not view this policy as remedial — it formalises the practice that caused the scandal.`},
+        {text:`Exit the private-label business entirely. The conflict of interest between operating a marketplace and competing with sellers on that marketplace is irreconcilable. The marketplace generates more revenue than private labels ever will. Eliminate the conflict, increase seller trust, attract more sellers, remove regulatory risk.`, points:5, feedback:`Exiting private label is the cleanest resolution but may be too extreme. Private-label products serve a legitimate purpose: they fill market gaps, provide affordable alternatives, and pressure sellers to maintain quality. The problem isn't the existence of private labels — it's using the platform's data advantage to identify and undercut specific sellers. An absolute firewall between marketplace data and private-label decisions preserves the private-label business while eliminating the unfair data advantage. Exiting entirely sends a strong trust signal but sacrifices a legitimate business line and doesn't establish the governance framework needed for other potential data conflicts.`}
+      ],
+      competency:[4,8,5]
+    },
+    {
+      scenario:`2020 — Edge or Cloud? The IoT Data Architecture Decision\n\nThe company's smart home devices are in 100M+ homes: voice speakers, cameras, doorbells, thermostats, displays. Currently, all processing happens in the cloud.\n\nGrowing challenges:\n• Latency: cloud round-trips take 200-500ms; customers want instant responses\n• Bandwidth: streaming video from 100M cameras costs billions annually\n• Privacy: customers are uncomfortable with home data going to the cloud\n• Reliability: when internet goes down, devices become useless\n\nThe Head of Hardware proposes edge computing: powerful processors in each device running AI locally.\n\nThe Head of AI objects: "Our best models require cloud-scale compute. Edge models would be dramatically less capable."`,
+      question:`What edge computing data strategy should the CDO implement?`,
+      options:[
+        {text:`Deploy a hybrid edge-cloud architecture with intelligent routing. Common, latency-sensitive operations run on-device (wake word detection, basic commands, camera motion detection, thermostat scheduling). Complex operations route to the cloud (natural language understanding, video recognition, cross-device automation). When internet is lost, devices maintain core functionality via edge models. Use federated learning: each device trains locally, sends only model updates (not raw data) to the cloud for aggregation into better global models. This addresses latency, bandwidth, privacy, and reliability simultaneously.`, points:10, feedback:`The hybrid edge-cloud architecture is the Pareto-optimal solution. Edge processing for common, latency-sensitive operations addresses 80% of interactions instantly: timer, alarm, lights, thermostat, basic questions — all processed locally with zero latency and zero bandwidth cost. Cloud processing for complex operations preserves the quality advantage: natural language understanding of nuanced questions, video-based face recognition, and cross-device automation routines require cloud-scale models. Federated learning is the architectural innovation that resolves the privacy-capability tension: devices learn from local data (preserving privacy) and share only model improvements (preserving intelligence). The global model gets better from 100M devices' experience without any raw data leaving any home. Offline functionality addresses the reliability problem: core features work without internet, degrading gracefully rather than failing completely.`},
+        {text:`Go all-in on edge computing. Design next-gen devices with powerful AI chips for local processing. All computation happens on-device. The cloud serves only as a coordination layer for settings and updates, never receiving voice, video, or sensor data. This is the strongest privacy position and eliminates bandwidth costs.`, points:5, feedback:`Edge-only eliminates privacy and bandwidth concerns but sacrifices significant capability. Current edge AI chips can run impressive models, but they can't match cloud-scale compute for complex tasks: sophisticated natural language understanding, real-time video analysis, and multi-device orchestration require computational resources that don't fit in a $50 smart speaker. Edge-only also eliminates the "learning from the fleet" advantage: if no data leaves any device, the company can't use aggregate patterns to improve the global model. The federated learning approach in the hybrid model solves this — devices share model updates, not raw data. Edge-only is an overcorrection that trades capability for privacy when both can be preserved.`},
+        {text:`Keep cloud processing but address specific concerns. Deploy regional edge servers to reduce latency. Compress data streams to reduce bandwidth. Offer a "private mode" for privacy-conscious users. Build offline fallback modes for common commands. This evolves the current architecture without the massive edge computing investment.`, points:6, feedback:`Regional edge servers reduce latency from 500ms to perhaps 50-100ms — an improvement but still not instant like on-device processing for common commands. Compressed data streams reduce bandwidth costs by perhaps 50% — helpful but still billions in costs at 100M devices. "Private mode" creates a two-tier experience that feels punitive: privacy-conscious customers get worse functionality. And offline fallback for "common commands" only works if the definition of "common" is narrow — customers expect their smart devices to work fully, not partially, when the internet drops. This approach improves the current system incrementally but doesn't address the architectural shift that edge computing enables.`},
+        {text:`Use edge computing only for privacy-sensitive data (voice, video) and keep everything else in the cloud. Voice is processed on-device with only the intent sent to the cloud. Camera feeds are processed on-device with only alerts sent. Non-sensitive data (thermostat, usage patterns) still goes to the cloud.`, points:7, feedback:`Privacy-based routing is a sensible heuristic: process the most sensitive data (voice recordings, video feeds) locally and send only processed results to the cloud. This dramatically reduces privacy risk — a breach would reveal "user asked about weather at 8am" rather than an actual voice recording. But this approach doesn't fully address the latency and reliability concerns: thermostat scheduling and usage patterns may not be "privacy-sensitive" but still benefit from edge processing (instant response, offline capability). And the binary split (edge for sensitive, cloud for everything else) misses the nuance of the hybrid approach: some operations should be edge for latency reasons even if they're not privacy-sensitive, and some sensitive operations need cloud compute for quality reasons. The intelligent routing approach is more flexible.`}
+      ],
+      competency:[7,1,8]
+    },
+    {
+      scenario:`2021 — Algorithmic Accountability: When Your AI Plays Favourites\n\nA regulatory investigation combined with a journalist's analysis reveals three issues:\n\n1. The product search algorithm systematically ranks the company's own products higher than equivalent third-party products — even when third-party products have better reviews and lower prices\n2. The recruitment AI (used internally and licensed to other companies) shows bias against candidates from certain universities and geographic regions\n3. The delivery time estimation model consistently underestimates delivery times in rural areas, causing customer dissatisfaction\n\nThe CEO demands a comprehensive solution. Three board members call for an immediate external audit.`,
+      question:`How should the CDO establish algorithmic accountability?`,
+      options:[
+        {text:`Implement a comprehensive AI governance framework with four pillars: (1) Independent AI Ethics Board — external experts with authority to review and require changes to any algorithm; they audit the three issues immediately and publish findings. (2) Algorithmic Impact Assessments — every AI system must pass fairness, bias, and impact assessment before launch. (3) Continuous monitoring — automated detection of bias drift; models that show disparate impact trigger automatic review. (4) Transparency reports — publish quarterly algorithmic fairness metrics for all major systems. Fix the three identified issues within 30 days, then build the long-term framework.`, points:10, feedback:`The four-pillar framework addresses both the immediate crisis and the systemic problem. The independent ethics board (external experts, not employees) has credibility that an internal team cannot match — when they publish findings saying "we found bias and here's how it was fixed," regulators and the public take it seriously. Algorithmic impact assessments prevent future issues by catching bias before deployment — similar to how environmental impact assessments catch pollution before a factory opens. Continuous monitoring addresses the reality that models drift: a fair model at launch can become unfair as data distributions shift over time. Automated detection catches this before humans notice. Transparency reports build long-term trust by making fairness measurable and public. The 30-day fix timeline for the three immediate issues shows urgency. The framework shows systemic commitment. Both are necessary.`},
+        {text:`Fix the three immediate issues urgently and implement internal controls. Adjust the search algorithm to remove self-preferencing. Retrain the recruitment AI with de-biased data. Fix delivery estimation accuracy in rural areas. Establish an internal AI ethics team for quarterly reviews. Keep auditing internal — external boards create unnecessary overhead and adversarial scrutiny.`, points:5, feedback:`Fixing the three issues is necessary but insufficient without systemic changes. Internal AI ethics teams face an inherent conflict: they're employed by the company whose algorithms they're auditing. When the ethics team finds that a revenue-generating algorithm is biased, they face pressure to minimise the finding. External ethics boards don't face this pressure — their reputation depends on independence. "Adversarial scrutiny" is actually the point: an external board that identifies problems the internal team missed prevents the next scandal. Quarterly reviews are also too infrequent — bias can emerge between reviews as data distributions shift. Continuous automated monitoring catches issues in real-time.`},
+        {text:`Commission a comprehensive external audit of all major AI systems. Hire a top consulting firm to evaluate every customer-facing algorithm for bias, fairness, and accuracy. Implement their recommendations. This is thorough and defensible.`, points:6, feedback:`An external audit addresses the immediate crisis with credibility — the company can tell regulators "we hired an independent firm to audit everything." But a one-time audit doesn't prevent future issues. Algorithms change weekly as models are retrained on new data. An audit that declares the search algorithm "fair" in March might be invalid by June if the training data shifts. The consulting firm's recommendations are implemented — then what? Without continuous monitoring and ongoing governance, the same problems will recur. The audit is a good first step but must be followed by the permanent governance framework (ethics board, impact assessments, continuous monitoring, transparency reports).`},
+        {text:`Focus on regulatory compliance: fix search self-preferencing (highest regulatory risk), implement minimum bias testing for recruitment AI, and improve delivery estimation accuracy. Prioritise compliance over aspiration. The company doesn't need to be a leader in AI ethics — it just needs to avoid penalties.`, points:3, feedback:`Minimum compliance is a race to the bottom. Regulations evolve — what's compliant today may be non-compliant next year as new rules are enacted. A company that aims for minimum compliance is always one step behind, reacting to each new regulation with the minimum required change. The company's AI systems make billions of decisions daily affecting hundreds of millions of people. The CDO who approaches this with "just avoid penalties" is ignoring the responsibility that comes with that influence. More practically: a compliance-only approach ensures the next scandal. If the company fixes only what regulators specifically flag, undetected biases in other systems (pricing, advertising targeting, seller ranking) will eventually surface — and the response "we only fixed what regulators told us to" will look negligent.`}
+      ],
+      competency:[4,9,5]
+    }
+  ]
+};
+
+
+// ─── PHASE MANAGEMENT ────────────────────────────────────
+function showPhase(p){
+  document.querySelectorAll('.phase').forEach(el=>el.classList.remove('active'));
+  document.getElementById('phase-'+p).classList.add('active');
+  window.scrollTo(0,0);
+}
+
+// ─── INIT ─────────────────────────────────────────────────
+(function(){
+  const savedName = localStorage.getItem(LS.name);
+  const savedEmail = localStorage.getItem(LS.email);
+  const attemptsDone = parseInt(localStorage.getItem(LS.attempts)||'0');
+  if(attemptsDone >= 2){ showPhase('blocked'); return; }
+  if(savedName && savedEmail){
+    state.name = savedName;
+    state.email = savedEmail;
+    state.currentAttempt = attemptsDone + 1;
+    document.getElementById('attempt-badge-display').textContent = `🎯 Attempt ${state.currentAttempt} of 2`;
+    showPhase('intro');
+  } else {
+    showPhase('email');
+  }
+})();
+
+// ─── OTP ──────────────────────────────────────────────────
+function sendOTP(){
+  const name  = document.getElementById('input-name').value.trim();
+  const email = document.getElementById('input-email').value.trim();
+  const errEl = document.getElementById('email-error');
+  errEl.style.display='none';
+  if(!name || name.length<2 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+    errEl.style.display='block';
+    return;
+  }
+  state.name = name;
+  state.email = email;
+  state.otp = Math.floor(100000+Math.random()*900000).toString();
+  state.otpExpiry = Date.now() + 600000;
+  state.otpAttempts = 0;
+
+  localStorage.setItem(LS.name, name);
+  localStorage.setItem(LS.email, email);
+
+  const btn = document.getElementById('send-otp-btn');
+  btn.textContent='Sending...';
+  btn.disabled=true;
+  gtag('event','otp_requested',{sim:'CDO-SIM-2-Amazon'});
+
+  emailjs.send(EJS_SERVICE, EJS_TEMPLATE, {
+    to_name: name,
+    to_email: email,
+    otp_code: state.otp,
+    sim_name: 'CDO SIM 2 — Amazon'
+  }).then(()=>{
+    document.getElementById('otp-email-display').textContent = email;
+    showPhase('otp');
+    startOTPTimer();
+    btn.textContent='Send Verification Code →';
+    btn.disabled=false;
+  }).catch(()=>{
+    gtag('event','otp_failed',{sim:'CDO-SIM-2-Amazon'});
+    btn.textContent='Send Verification Code →';
+    btn.disabled=false;
+    errEl.textContent='Failed to send code. Please try again.';
+    errEl.style.display='block';
+  });
+}
+
+function startOTPTimer(){
+  clearInterval(state.timerInterval);
+  state.timerInterval = setInterval(()=>{
+    const remaining = Math.max(0, state.otpExpiry - Date.now());
+    const m = Math.floor(remaining/60000);
+    const s = Math.floor((remaining%60000)/1000);
+    const el = document.getElementById('otp-timer');
+    if(el) el.textContent = `${m}:${s.toString().padStart(2,'0')}`;
+    if(remaining===0){ clearInterval(state.timerInterval); }
+  },1000);
+}
+
+function verifyOTP(){
+  const input = document.getElementById('input-otp').value.trim();
+  const errEl = document.getElementById('otp-error');
+  const okEl  = document.getElementById('otp-success');
+  errEl.style.display='none';
+  if(Date.now() > state.otpExpiry){
+    errEl.textContent='Code expired. Please request a new one.';
+    errEl.style.display='block';
+    return;
+  }
+  if(input !== state.otp){
+    state.otpAttempts++;
+    errEl.style.display='block';
+    return;
+  }
+  clearInterval(state.timerInterval);
+  okEl.style.display='block';
+  gtag('event','email_verified',{sim:'CDO-SIM-2-Amazon'});
+  setTimeout(()=>{
+    document.getElementById('attempt-badge-display').textContent = `🎯 Attempt ${state.currentAttempt} of 2`;
+    showPhase('intro');
+  },800);
+}
+
+function resendOTP(){
+  showPhase('email');
+  document.getElementById('input-name').value = state.name;
+  document.getElementById('input-email').value = state.email;
+}
+
+// ─── SIMULATION ───────────────────────────────────────────
+function startSim(){
+  const questions = Q[state.currentAttempt];
+  state.currentQ = 0;
+  state.answers  = [];
+  state.totalScore = 0;
+  state.maxScore   = questions.reduce((sum,q)=>sum+Math.max(...q.options.map(o=>o.points)),0);
+  gtag('event','sim_started',{sim:'CDO-SIM-2-Amazon',attempt:state.currentAttempt});
+  showPhase('questions');
+  renderQuestion();
+}
+
+function renderQuestion(){
+  const questions = Q[state.currentAttempt];
+  const q = questions[state.currentQ];
+  const total = questions.length;
+  const qNum  = state.currentQ+1;
+
+  document.getElementById('q-progress-label').textContent = `Question ${qNum} of ${total}`;
+  document.getElementById('q-score-label').textContent = `Score: ${state.totalScore}`;
+  document.getElementById('progress-fill').style.width = `${((qNum-1)/total)*100}%`;
+
+  const scenarioEl = document.getElementById('q-scenario');
+  scenarioEl.innerHTML = q.scenario.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\n/g,'<br>');
+
+  document.getElementById('q-question').textContent = q.question;
+
+  const optionsEl = document.getElementById('q-options');
+  optionsEl.innerHTML = '';
+  q.options.forEach((opt,i)=>{
+    const div = document.createElement('div');
+    div.className='option';
+    div.textContent=opt.text;
+    div.onclick=()=>selectOption(i);
+    optionsEl.appendChild(div);
+  });
+
+  document.getElementById('q-feedback').style.display='none';
+  document.getElementById('next-btn').style.display='none';
+}
+
+function selectOption(idx){
+  const questions = Q[state.currentAttempt];
+  const q = questions[state.currentQ];
+  const chosen = q.options[idx];
+  const maxPts = Math.max(...q.options.map(o=>o.points));
+
+  document.querySelectorAll('.option').forEach(el=>el.classList.add('locked'));
+
+  state.answers.push({q:state.currentQ, chosen:idx, points:chosen.points, maxPts, feedback:chosen.feedback, questionText:q.question});
+  state.totalScore += chosen.points;
+  document.getElementById('q-score-label').textContent = `Score: ${state.totalScore}`;
+
+  // Colour the selected option
+  const opts = document.querySelectorAll('.option');
+  const pctQ = (chosen.points/maxPts)*100;
+  if(pctQ>=80) opts[idx].style.borderColor='#059669';
+  else if(pctQ>=50) opts[idx].style.borderColor='#d97706';
+  else opts[idx].style.borderColor='#dc2626';
+
+  // Show feedback
+  document.getElementById('q-feedback-text').textContent = chosen.feedback;
+  document.getElementById('q-feedback').style.display='block';
+
+  document.getElementById('next-btn').style.display='inline-block';
+  document.getElementById('next-btn').textContent =
+    state.currentQ < questions.length-1 ? 'Next Question →' : 'See My Results →';
+}
+
+function nextQuestion(){
+  const questions = Q[state.currentAttempt];
+  if(state.currentQ < questions.length-1){
+    state.currentQ++;
+    renderQuestion();
+    document.getElementById('phase-questions').querySelector('.q-wrap').scrollTop=0;
+    window.scrollTo(0,0);
+  } else {
+    showResults();
+  }
+}
+
+// ─── LEARN CARDS ──────────────────────────────────────────
+let currentLearnCard = 0;
+function nextLearnCard(){
+  const cards = document.querySelectorAll('.learn-card');
+  if(currentLearnCard < cards.length-1){
+    cards[currentLearnCard].classList.remove('active');
+    currentLearnCard++;
+    cards[currentLearnCard].classList.add('active');
+    window.scrollTo(0,0);
+  }
+}
+
+// ─── RESULTS ──────────────────────────────────────────────
+function showResults(){
+  const pct = Math.round((state.totalScore/state.maxScore)*100);
+  const isPreview = new URLSearchParams(location.search).get('preview')==='true' || !!document.getElementById('founder-badge');
+  if(!isPreview){
+    const attemptsDone = parseInt(localStorage.getItem(LS.attempts)||'0') + 1;
+    localStorage.setItem(LS.attempts, attemptsDone.toString());
+    const scores = JSON.parse(localStorage.getItem(LS.scores)||'[]');
+    scores.push({attempt:state.currentAttempt, score:state.totalScore, pct, date:new Date().toISOString()});
+    localStorage.setItem(LS.scores, JSON.stringify(scores));
+  }
+
+  const tier = pct>=90?'Strategic Mastery':pct>=75?'Applied Proficiency':pct>=60?'Core Competency':'Foundational Understanding';
+  gtag('event','sim_completed',{sim:'CDO-SIM-2-Amazon',attempt:state.currentAttempt,score_pct:pct,tier:tier});
+  const tierClass = pct>=90?'tier-mastery':pct>=75?'tier-proficiency':pct>=60?'tier-competency':'tier-foundational';
+  const tierFeedback = {
+    'Strategic Mastery':'Outstanding. You demonstrated the kind of nuanced, first-principles thinking that defines exceptional data leaders.',
+    'Applied Proficiency':'Strong performance. You understand the core frameworks and apply them well. Focus on the questions you missed to sharpen your edge.',
+    'Core Competency':'Good foundations. You got the basics right but there are gaps in some advanced areas. Review the feedback on your lowest-scoring answers.',
+    'Foundational Understanding':'A learning opportunity. The feedback on each question contains the mental models you need. Try Attempt 2 with fresh perspective.'
+  }[tier];
+
+  document.getElementById('results-heading').textContent = `Your Results — Attempt ${state.currentAttempt}`;
+  document.getElementById('result-pct').textContent = pct+'%';
+  document.getElementById('result-score-label').textContent = `${state.totalScore} / ${state.maxScore} pts`;
+
+  const badge = document.getElementById('tier-badge');
+  badge.textContent = tier;
+  badge.className = 'tier-badge '+tierClass;
+  document.getElementById('tier-feedback').textContent = tierFeedback;
+
+  drawScoreRing(pct);
+
+  // Breakdown with full feedback
+  const bd = document.getElementById('q-breakdown');
+  const questions = Q[state.currentAttempt];
+  bd.innerHTML = state.answers.map((a,i)=>{
+    const pctQ = Math.round((a.points/a.maxPts)*100);
+    const dotClass = pctQ>=80?'dot-high':pctQ>=50?'dot-mid':'dot-low';
+    const borderColor = pctQ>=80?'#059669':pctQ>=50?'#d97706':'#dc2626';
+    const chosen = questions[i].options[a.chosen];
+    return `<div style="border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:12px;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+        <div class="q-dot ${dotClass}"></div>
+        <span style="font-weight:600;font-size:.88em;flex:1;">Q${i+1}: ${questions[i].question}</span>
+        <span style="font-weight:700;font-size:.88em;color:${borderColor};">${a.points}/${a.maxPts}</span>
+      </div>
+      <div style="font-size:.82em;color:var(--muted);margin-bottom:8px;">Your answer: <em>${chosen.text}</em></div>
+      <div style="font-size:.85em;color:#374151;line-height:1.7;background:var(--light);border-left:3px solid ${borderColor};border-radius:0 6px 6px 0;padding:10px 14px;">${a.feedback}</div>
+    </div>`;
+  }).join('');
+
+  // Cumulative competency analysis
+  const compScores = state.answers.map((a,i)=>({
+    name: COMP_MAP[i]?COMP_MAP[i].name:`Competency ${i+1}`,
+    pct:  Math.round((a.points/a.maxPts)*100)
+  }));
+
+  document.getElementById('competency-bars').innerHTML = compScores.map(c=>{
+    const color = c.pct>=80?'#059669':c.pct>=50?'#d97706':'#dc2626';
+    return `<div class="comp-bar-row">
+      <div class="comp-label">${c.name}</div>
+      <div class="comp-track"><div class="comp-fill" style="width:${c.pct}%;background:${color};"></div></div>
+      <div class="comp-pct">${c.pct}%</div>
+    </div>`;
+  }).join('');
+
+  const sorted = [...compScores].sort((a,b)=>b.pct-a.pct);
+  const strengths = sorted.slice(0,2);
+  const gaps = sorted.slice(-2);
+
+  document.getElementById('strength-tags').innerHTML = strengths.map(s=>`<span class="strength-tag">${s.name}</span>`).join('');
+  document.getElementById('gap-tags').innerHTML = gaps.map(g=>`<span class="gap-tag">${g.name}</span>`).join('');
+
+  const insightText = pct>=90
+    ? `Outstanding across the board. Your ${strengths[0].name} and ${strengths[1].name} scores reflect the kind of first-principles thinking that defines exceptional data leaders. You consistently chose depth over speed, long-term over short-term, and principle over convenience.`
+    : pct>=75
+    ? `Strong CDO instincts. You excelled in ${strengths[0].name} and ${strengths[1].name}, showing real strategic and technical maturity. Your development areas — ${gaps[0].name} and ${gaps[1].name} — are exactly where the highest-impact CDOs differentiate themselves as they scale.`
+    : pct>=60
+    ? `Solid foundations with clear growth areas. You showed genuine competency in ${strengths[0].name} and ${strengths[1].name}, but the gaps in ${gaps[0].name} and ${gaps[1].name} reveal where your thinking can deepen. Review the expert feedback on your lowest-scoring answers — those mental models are what separates good from great at CDO level.`
+    : `This simulation is designed to challenge. Your instincts in ${strengths[0].name} showed promise. The gaps in ${gaps[0].name} and ${gaps[1].name} reveal where CDO-level thinking diverges most sharply from general data management. Use the feedback from this round to recalibrate — Attempt 2 gives you fresh scenarios to apply these lessons.`;
+
+  document.getElementById('insight-text').textContent = insightText;
+
+  // Show "next sim" banner and attempt 2 prompt
+  const isPreview2 = new URLSearchParams(location.search).get('preview')==='true' || !!document.getElementById('founder-badge');
+  if(isPreview2){
+    document.getElementById('attempt2-prompt').style.display='block';
+    document.getElementById('next-sim-banner').style.display='none';
+  } else if(state.currentAttempt===1){
+    document.getElementById('attempt2-prompt').style.display='block';
+    document.getElementById('next-sim-banner').style.display='none';
+  } else {
+    document.getElementById('attempt2-prompt').style.display='none';
+    document.getElementById('next-sim-banner').style.display='flex';
+  }
+
+  drawCertificate(pct, tier);
+  drawBadge(pct, tier);
+  showPhase('results');
+}
+
+function startAttempt2(){
+  state.currentAttempt = 2;
+  currentLearnCard = 0;
+  const cards = document.querySelectorAll('.learn-card');
+  cards.forEach((c,i)=>{c.classList.toggle('active',i===0);});
+  showPhase('intro');
+  document.getElementById('attempt-badge-display').textContent = '🎯 Attempt 2 of 2';
+}
+
+// ─── SCORE RING ───────────────────────────────────────────
+function drawScoreRing(pct){
+  const canvas = document.getElementById('scoreRingCanvas');
+  const ctx = canvas.getContext('2d');
+  const cx=80, cy=80, r=65, lw=12;
+  ctx.clearRect(0,0,160,160);
+  ctx.beginPath(); ctx.arc(cx,cy,r,0,Math.PI*2);
+  ctx.strokeStyle='#e5e7eb'; ctx.lineWidth=lw; ctx.stroke();
+  const angle = (pct/100)*Math.PI*2 - Math.PI/2;
+  ctx.beginPath(); ctx.arc(cx,cy,r,-Math.PI/2,angle);
+  ctx.strokeStyle = pct>=90?'#16a34a':pct>=75?'#2563eb':pct>=60?'#d97706':'#dc2626';
+  ctx.lineWidth=lw; ctx.lineCap='round'; ctx.stroke();
+}
+
+// ─── CERTIFICATE ──────────────────────────────────────────
+function drawCertificate(pct, tier){
+  const canvas = document.getElementById('certCanvas');
+  const ctx = canvas.getContext('2d');
+  const W=1200, H=850;
+  canvas.width=W; canvas.height=H;
+  ctx.clearRect(0,0,W,H);
+  const CX=W/2;
+  const gold='#c9a84c';
+
+  // Dark gradient background
+  const bg=ctx.createLinearGradient(0,0,W,H);
+  bg.addColorStop(0,'#0c1221'); bg.addColorStop(0.5,'#131b2e'); bg.addColorStop(1,'#1a1a2e');
+  ctx.fillStyle=bg; ctx.fillRect(0,0,W,H);
+
+  // Subtle dot grid
+  ctx.fillStyle='rgba(255,255,255,0.018)';
+  for(let x=0;x<W;x+=40)for(let y=0;y<H;y+=40){ctx.beginPath();ctx.arc(x,y,1.2,0,Math.PI*2);ctx.fill();}
+
+  // Gold accent bar at top
+  const topGrad=ctx.createLinearGradient(0,0,W,0);
+  topGrad.addColorStop(0,'#c9a84c'); topGrad.addColorStop(0.5,'#e8d48b'); topGrad.addColorStop(1,'#c9a84c');
+  ctx.fillStyle=topGrad; ctx.fillRect(0,0,W,5);
+
+  // Border frame
+  ctx.strokeStyle='rgba(201,168,76,0.25)'; ctx.lineWidth=1;
+  ctx.strokeRect(24,24,W-48,H-48);
+
+  // Corner ornaments
+  [[26,26,1,1],[W-26,26,-1,1],[26,H-26,1,-1],[W-26,H-26,-1,-1]].forEach(([x,y,sx,sy])=>{
+    ctx.strokeStyle='rgba(201,168,76,0.4)'; ctx.lineWidth=1.5;
+    ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+sx*32,y);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x,y+sy*32);ctx.stroke();
+  });
+
+  // HEADER — Logo + Track
+  ctx.textAlign='left';
+  ctx.font='bold 26px Inter, Arial, sans-serif';
+  const cxoW=ctx.measureText('CXO').width;
+  const slW=ctx.measureText(' Simulabs').width;
+  const logoX=CX-(cxoW+slW)/2;
+  ctx.fillStyle='#ffffff'; ctx.fillText('CXO',logoX,72);
+  ctx.fillStyle='#e23744'; ctx.fillText(' Simulabs',logoX+cxoW,72);
+
+  ctx.textAlign='center';
+  ctx.font='600 11px Inter, Arial, sans-serif';
+  ctx.fillStyle=gold; ctx.letterSpacing='3px';
+  ctx.fillText('CDO TRACK  ·  SIMULATION 2',CX,98);
+  ctx.letterSpacing='0';
+
+  // Gold divider with diamond
+  ctx.strokeStyle='rgba(201,168,76,0.3)'; ctx.lineWidth=0.8;
+  ctx.beginPath();ctx.moveTo(CX-110,116);ctx.lineTo(CX+110,116);ctx.stroke();
+  ctx.fillStyle=gold;
+  ctx.beginPath();ctx.moveTo(CX,112);ctx.lineTo(CX+4,116);ctx.lineTo(CX,120);ctx.lineTo(CX-4,116);ctx.closePath();ctx.fill();
+
+  // TITLE
+  ctx.letterSpacing='6px';
+  ctx.font='600 13px Inter, Arial, sans-serif';
+  ctx.fillStyle=gold;
+  ctx.fillText('SIMULATION COMPLETION RECORD',CX,152);
+  ctx.letterSpacing='0';
+
+  // NAME
+  ctx.font='italic 15px Georgia, serif';
+  ctx.fillStyle='rgba(255,255,255,0.4)';
+  ctx.fillText('This certifies that',CX,200);
+
+  const name=state.name||state.email;
+  ctx.font='bold 52px Georgia, "Times New Roman", serif';
+  ctx.fillStyle='#ffffff';
+  ctx.fillText(name,CX,260);
+
+  // Gold fading underline
+  const nw=Math.min(ctx.measureText(name).width+60,W-200);
+  const ulGrad=ctx.createLinearGradient(CX-nw/2,0,CX+nw/2,0);
+  ulGrad.addColorStop(0,'rgba(201,168,76,0)'); ulGrad.addColorStop(0.3,'rgba(201,168,76,0.45)');
+  ulGrad.addColorStop(0.5,'rgba(201,168,76,0.65)'); ulGrad.addColorStop(0.7,'rgba(201,168,76,0.45)');
+  ulGrad.addColorStop(1,'rgba(201,168,76,0)');
+  ctx.strokeStyle=ulGrad; ctx.lineWidth=1.2;
+  ctx.beginPath();ctx.moveTo(CX-nw/2,275);ctx.lineTo(CX+nw/2,275);ctx.stroke();
+
+  // ACHIEVEMENT — Competency HERO, company secondary
+  ctx.font='italic 14px Georgia, serif';
+  ctx.fillStyle='rgba(255,255,255,0.38)';
+  ctx.fillText('has completed a learning simulation exploring',CX,316);
+
+  // COMPETENCY = THE HERO
+  ctx.font='bold 28px Inter, Arial, sans-serif';
+  ctx.fillStyle='#ffffff';
+  ctx.fillText('Data & AI Strategy',CX,358);
+
+  // Company = secondary context
+  ctx.font='15px Inter, Arial, sans-serif';
+  ctx.fillStyle='rgba(255,255,255,0.35)';
+  ctx.fillText('through the Amazon case simulation',CX,390);
+
+  // METRICS — Score / Tier / Date
+  const divGrad1=ctx.createLinearGradient(100,0,W-100,0);
+  divGrad1.addColorStop(0,'rgba(201,168,76,0)'); divGrad1.addColorStop(0.2,'rgba(201,168,76,0.2)');
+  divGrad1.addColorStop(0.5,'rgba(201,168,76,0.3)'); divGrad1.addColorStop(0.8,'rgba(201,168,76,0.2)');
+  divGrad1.addColorStop(1,'rgba(201,168,76,0)');
+  ctx.strokeStyle=divGrad1; ctx.lineWidth=0.6;
+  ctx.beginPath();ctx.moveTo(100,420);ctx.lineTo(W-100,420);ctx.stroke();
+
+  const metricsY=488;
+  const colL=240, colC=CX, colR=W-240;
+  const ringColor=pct>=90?'#4ade80':pct>=75?'#60a5fa':pct>=60?'#fbbf24':'#f87171';
+
+  // SCORE (left) with ring
+  const ringR=58, ringLw=8;
+  ctx.beginPath();ctx.arc(colL,metricsY,ringR,0,Math.PI*2);
+  ctx.strokeStyle='rgba(255,255,255,0.06)'; ctx.lineWidth=ringLw; ctx.stroke();
+  const angle=(pct/100)*Math.PI*2-Math.PI/2;
+  ctx.beginPath();ctx.arc(colL,metricsY,ringR,-Math.PI/2,angle);
+  ctx.strokeStyle=ringColor; ctx.lineWidth=ringLw; ctx.lineCap='round'; ctx.stroke();
+  ctx.lineCap='butt';
+  ctx.font='bold 44px Inter, Arial, sans-serif';
+  ctx.fillStyle='#ffffff';
+  ctx.fillText(pct+'%',colL,metricsY+14);
+  ctx.font='600 9px Inter, Arial, sans-serif';
+  ctx.fillStyle='rgba(255,255,255,0.3)'; ctx.letterSpacing='2px';
+  ctx.fillText('SCORE',colL,metricsY+38);
+  ctx.letterSpacing='0';
+
+  // TIER (center)
+  ctx.font='bold 26px Inter, Arial, sans-serif';
+  ctx.fillStyle=ringColor;
+  ctx.fillText(tier,colC,metricsY+8);
+  ctx.font='600 9px Inter, Arial, sans-serif';
+  ctx.fillStyle='rgba(255,255,255,0.3)'; ctx.letterSpacing='2px';
+  ctx.fillText('PERFORMANCE TIER',colC,metricsY+32);
+  ctx.letterSpacing='0';
+
+  // DATE (right)
+  const d=new Date();
+  const dateStr=d.toLocaleString('default',{month:'long'})+' '+d.getDate()+', '+d.getFullYear();
+  ctx.font='bold 20px Inter, Arial, sans-serif';
+  ctx.fillStyle='#ffffff';
+  ctx.fillText(dateStr,colR,metricsY+8);
+  ctx.font='600 9px Inter, Arial, sans-serif';
+  ctx.fillStyle='rgba(255,255,255,0.3)'; ctx.letterSpacing='2px';
+  ctx.fillText('DATE ISSUED',colR,metricsY+32);
+  ctx.letterSpacing='0';
+
+  // Vertical separators
+  ctx.strokeStyle='rgba(201,168,76,0.15)'; ctx.lineWidth=0.8;
+  const sepTop=metricsY-52, sepBot=metricsY+48;
+  ctx.beginPath();ctx.moveTo((colL+colC)/2,sepTop);ctx.lineTo((colL+colC)/2,sepBot);ctx.stroke();
+  ctx.beginPath();ctx.moveTo((colC+colR)/2,sepTop);ctx.lineTo((colC+colR)/2,sepBot);ctx.stroke();
+
+  // Horizontal divider below metrics
+  ctx.strokeStyle=divGrad1; ctx.lineWidth=0.6;
+  ctx.beginPath();ctx.moveTo(100,556);ctx.lineTo(W-100,556);ctx.stroke();
+
+  // COMPETENCIES ASSESSED
+  ctx.letterSpacing='2.5px';
+  ctx.font='600 9px Inter, Arial, sans-serif';
+  ctx.fillStyle=gold;
+  ctx.fillText('COMPETENCIES ASSESSED',CX,586);
+  ctx.letterSpacing='0';
+
+  const comps=COMP_MAP.map(c=>c.name);
+  ctx.font='11.5px Inter, Arial, sans-serif';
+  ctx.fillStyle='rgba(255,255,255,0.45)';
+  const compStartX=160, compSpacing=220;
+  comps.slice(0,5).forEach((c,i)=>{ctx.fillText(c,compStartX+i*compSpacing,614);});
+  comps.slice(5,10).forEach((c,i)=>{ctx.fillText(c,compStartX+i*compSpacing,640);});
+
+  // FOOTER
+  const sealX=W-90, sealY=H-85, sealR=32;
+  ctx.strokeStyle='rgba(201,168,76,0.3)'; ctx.lineWidth=1.2;
+  ctx.beginPath();ctx.arc(sealX,sealY,sealR,0,Math.PI*2);ctx.stroke();
+  ctx.strokeStyle='rgba(201,168,76,0.12)'; ctx.lineWidth=0.6;
+  ctx.beginPath();ctx.arc(sealX,sealY,sealR-6,0,Math.PI*2);ctx.stroke();
+  ctx.fillStyle='rgba(201,168,76,0.04)';
+  ctx.beginPath();ctx.arc(sealX,sealY,sealR,0,Math.PI*2);ctx.fill();
+  ctx.font='bold 7px Inter, Arial, sans-serif';
+  ctx.fillStyle=gold; ctx.letterSpacing='1.5px';
+  ctx.fillText('COMPLETED',sealX,sealY-6);
+  ctx.letterSpacing='0';
+  ctx.font='bold 18px Arial';
+  ctx.fillStyle=gold;
+  ctx.fillText('✓',sealX,sealY+10);
+
+  const footGrad=ctx.createLinearGradient(50,0,W-50,0);
+  footGrad.addColorStop(0,'rgba(201,168,76,0)'); footGrad.addColorStop(0.3,'rgba(201,168,76,0.2)');
+  footGrad.addColorStop(0.5,'rgba(201,168,76,0.3)'); footGrad.addColorStop(0.7,'rgba(201,168,76,0.2)');
+  footGrad.addColorStop(1,'rgba(201,168,76,0)');
+  ctx.strokeStyle=footGrad; ctx.lineWidth=0.6;
+  ctx.beginPath();ctx.moveTo(50,H-55);ctx.lineTo(W-50,H-55);ctx.stroke();
+
+  ctx.textAlign='left';
+  ctx.font='12px Inter, Arial, sans-serif';
+  ctx.fillStyle='rgba(255,255,255,0.5)';
+  ctx.fillText('© 2026 CXO Simulabs  ·  Not a professional certification  ·  Not affiliated with Amazon.com, Inc.',55,H-32);
+  ctx.textAlign='right';
+  ctx.fillStyle='rgba(255,255,255,0.5)';
+  ctx.font='bold 11px Inter, Arial, sans-serif';
+  ctx.fillText('www.cxosimulabs.com',W-55,H-32);
+}
+
+// ─── INSTAGRAM BADGE ──────────────────────────────────────
+function drawBadge(pct, tier){
+  const canvas=document.getElementById('badgeCanvas');
+  const ctx=canvas.getContext('2d');
+  const S=1080;
+  ctx.clearRect(0,0,S,S);
+  const C=S/2;
+  const gold='#c9a84c';
+
+  // Dark gradient background
+  const bg=ctx.createLinearGradient(0,0,S,S);
+  bg.addColorStop(0,'#0c1221'); bg.addColorStop(0.5,'#131b2e'); bg.addColorStop(1,'#1a1a2e');
+  ctx.fillStyle=bg; ctx.fillRect(0,0,S,S);
+
+  // Subtle dot grid
+  ctx.fillStyle='rgba(255,255,255,0.018)';
+  for(let x=0;x<S;x+=44)for(let y=0;y<S;y+=44){ctx.beginPath();ctx.arc(x,y,1.2,0,Math.PI*2);ctx.fill();}
+
+  // Gold bar top
+  const topGrad=ctx.createLinearGradient(0,0,S,0);
+  topGrad.addColorStop(0,'#c9a84c'); topGrad.addColorStop(0.5,'#e8d48b'); topGrad.addColorStop(1,'#c9a84c');
+  ctx.fillStyle=topGrad; ctx.fillRect(0,0,S,6);
+
+  // Border + corners
+  ctx.strokeStyle='rgba(201,168,76,0.25)'; ctx.lineWidth=1;
+  ctx.strokeRect(24,24,S-48,S-48);
+  [[26,26,1,1],[S-26,26,-1,1],[26,S-26,1,-1],[S-26,S-26,-1,-1]].forEach(([x,y,sx,sy])=>{
+    ctx.strokeStyle='rgba(201,168,76,0.4)'; ctx.lineWidth=1.5;
+    ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+sx*28,y);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x,y+sy*28);ctx.stroke();
+  });
+
+  // Logo
+  ctx.textAlign='left';
+  ctx.font='bold 36px Inter, Arial, sans-serif';
+  const cW=ctx.measureText('CXO').width;
+  const sW=ctx.measureText(' Simulabs').width;
+  const lStart=C-(cW+sW)/2;
+  ctx.fillStyle='#ffffff'; ctx.fillText('CXO',lStart,82);
+  ctx.fillStyle='#e23744'; ctx.fillText(' Simulabs',lStart+cW,82);
+
+  // Track label
+  ctx.textAlign='center';
+  ctx.font='600 13px Inter, Arial, sans-serif';
+  ctx.fillStyle=gold; ctx.letterSpacing='3px';
+  ctx.fillText('CDO TRACK  ·  SIMULATION 2',C,114);
+  ctx.letterSpacing='0';
+
+  // Gold divider
+  ctx.strokeStyle='rgba(201,168,76,0.3)'; ctx.lineWidth=0.8;
+  ctx.beginPath();ctx.moveTo(C-100,134);ctx.lineTo(C+100,134);ctx.stroke();
+  ctx.fillStyle=gold;
+  ctx.beginPath();ctx.moveTo(C,130);ctx.lineTo(C+4,134);ctx.lineTo(C,138);ctx.lineTo(C-4,134);ctx.closePath();ctx.fill();
+
+  // Competency HERO
+  ctx.font='bold 36px Inter, Arial, sans-serif';
+  ctx.fillStyle='#ffffff';
+  ctx.fillText('Data & AI',C,186);
+  ctx.font='bold 36px Inter, Arial, sans-serif';
+  ctx.fillStyle='rgba(255,255,255,0.5)';
+  ctx.fillText('Strategy',C,228);
+
+  // Company context
+  ctx.font='16px Inter, Arial, sans-serif';
+  ctx.fillStyle='rgba(255,255,255,0.3)';
+  ctx.fillText('Amazon case simulation',C,262);
+
+  // Name
+  const name=state.name||state.email;
+  ctx.font='bold 40px Georgia, "Times New Roman", serif';
+  ctx.fillStyle='#ffffff';
+  ctx.fillText(name,C,320);
+  const nw2=Math.min(ctx.measureText(name).width+40,S-120);
+  const ulGrad=ctx.createLinearGradient(C-nw2/2,0,C+nw2/2,0);
+  ulGrad.addColorStop(0,'rgba(201,168,76,0)'); ulGrad.addColorStop(0.3,'rgba(201,168,76,0.4)');
+  ulGrad.addColorStop(0.5,'rgba(201,168,76,0.55)'); ulGrad.addColorStop(0.7,'rgba(201,168,76,0.4)');
+  ulGrad.addColorStop(1,'rgba(201,168,76,0)');
+  ctx.strokeStyle=ulGrad; ctx.lineWidth=1;
+  ctx.beginPath();ctx.moveTo(C-nw2/2,334);ctx.lineTo(C+nw2/2,334);ctx.stroke();
+
+  // Score ring
+  const ringCY=560, r=170, lw=22;
+  ctx.beginPath();ctx.arc(C,ringCY,r,0,Math.PI*2);
+  ctx.strokeStyle='rgba(255,255,255,0.06)'; ctx.lineWidth=lw; ctx.stroke();
+  const angle=(pct/100)*Math.PI*2-Math.PI/2;
+  const ringColor=pct>=90?'#4ade80':pct>=75?'#60a5fa':pct>=60?'#fbbf24':'#f87171';
+  ctx.beginPath();ctx.arc(C,ringCY,r,-Math.PI/2,angle);
+  ctx.strokeStyle=ringColor; ctx.lineWidth=lw; ctx.lineCap='round'; ctx.stroke();
+  ctx.lineCap='butt';
+
+  // Score text
+  ctx.font='bold 120px Inter, Arial, sans-serif';
+  ctx.fillStyle='#ffffff';
+  ctx.fillText(pct+'%',C,ringCY+40);
+
+  // Tier
+  ctx.font='bold 30px Inter, Arial, sans-serif';
+  ctx.fillStyle=ringColor;
+  ctx.fillText(tier,C,ringCY+88);
+
+  // Footer
+  const fDivGrad=ctx.createLinearGradient(40,0,S-40,0);
+  fDivGrad.addColorStop(0,'rgba(201,168,76,0)'); fDivGrad.addColorStop(0.3,'rgba(201,168,76,0.2)');
+  fDivGrad.addColorStop(0.5,'rgba(201,168,76,0.3)'); fDivGrad.addColorStop(0.7,'rgba(201,168,76,0.2)');
+  fDivGrad.addColorStop(1,'rgba(201,168,76,0)');
+  ctx.strokeStyle=fDivGrad; ctx.lineWidth=0.6;
+  ctx.beginPath();ctx.moveTo(40,S-100);ctx.lineTo(S-40,S-100);ctx.stroke();
+
+  // Seal
+  const sealX=S-90, sealY=S-58;
+  ctx.strokeStyle='rgba(201,168,76,0.28)'; ctx.lineWidth=1;
+  ctx.beginPath();ctx.arc(sealX,sealY,22,0,Math.PI*2);ctx.stroke();
+  ctx.font='bold 14px Arial'; ctx.fillStyle=gold;
+  ctx.fillText('✓',sealX,sealY+5);
+
+  ctx.font='bold 22px Inter, Arial, sans-serif';
+  ctx.fillStyle='rgba(255,255,255,0.45)';
+  ctx.fillText('www.cxosimulabs.com',C,S-52);
+
+  ctx.font='14px Inter, Arial, sans-serif';
+  ctx.fillStyle='rgba(255,255,255,0.2)';
+  ctx.fillText('Try the free simulation →',C,S-28);
+}
+
+function getPctTier(){
+  return {
+    pct: parseInt(document.getElementById('result-pct').textContent),
+    tier: document.getElementById('tier-badge').textContent
+  };
+}
+function downloadCert(){
+  const {pct,tier}=getPctTier();
+  gtag('event','cert_downloaded',{sim:'CDO-SIM-2-Amazon',score_pct:pct,tier:tier});
+  const canvas=document.getElementById('certCanvas');
+  canvas.width=1200; canvas.height=850;
+  drawCertificate(pct,tier);
+  const link=document.createElement('a');
+  link.download=`CXO-Simulabs-Certificate-${(state.name||'').replace(/\s/g,'-')}.png`;
+  link.href=canvas.toDataURL('image/png'); link.click();
+}
+function downloadBadge(){
+  const {pct,tier}=getPctTier();
+  gtag('event','badge_downloaded',{sim:'CDO-SIM-2-Amazon',score_pct:pct,tier:tier});
+  const canvas=document.getElementById('badgeCanvas');
+  drawBadge(pct,tier);
+  const link=document.createElement('a');
+  link.download=`CXO-Simulabs-Badge-${(state.name||'').replace(/\s/g,'-')}.png`;
+  link.href=canvas.toDataURL('image/png'); link.click();
+}
+function shareLinkedIn(){
+  gtag('event','share_linkedin',{sim:'CDO-SIM-2-Amazon'});
+  const {pct,tier}=getPctTier();
+  const text=encodeURIComponent(`I just scored ${pct}% (${tier}) on the Amazon Data & AI Strategy Simulation by CXO Simulabs — 10 real data flywheel decisions, expert feedback.\n\nTry it free: https://cxosimulabs.com\n\n#DataStrategy #CDO #CXOSimulabs #DataFlywheel`);
+  window.open(`https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fcxosimulabs.com&summary=${text}`,'_blank');
+}
+function shareTwitter(){
+  const {pct,tier}=getPctTier();
+  const text=encodeURIComponent(`Just scored ${pct}% (${tier}) on the Amazon Data & AI Strategy Simulation by @CXOSimulabs — 10 real data flywheel decisions, expert feedback. Try it free 👇\nhttps://cxosimulabs.com\n#CDO #DataStrategy #DataFlywheel`);
+  window.open(`https://twitter.com/intent/tweet?text=${text}`,'_blank');
+}
+function shareWhatsApp(){
+  const {pct,tier}=getPctTier();
+  const text=encodeURIComponent(`I scored ${pct}% (${tier}) on the Amazon Data & AI Strategy Simulation by CXO Simulabs — 10 real data flywheel decisions with expert feedback. Try it free: https://cxosimulabs.com`);
+  window.open(`https://wa.me/?text=${text}`,'_blank');
+}
+function copyLink(){
+  navigator.clipboard.writeText('https://cxosimulabs.com').then(()=>{
+    const btn=document.getElementById('copy-link-btn');
+    btn.textContent='✓ Copied!';
+    setTimeout(()=>btn.textContent='Copy Link',2000);
+  });
+}
+</script>
+</body>
+</html>
