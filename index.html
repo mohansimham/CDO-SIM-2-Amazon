@@ -789,7 +789,7 @@ function sendOTP(){
   emailjs.send(EJS_SERVICE, EJS_TEMPLATE, {
     to_name: name,
     to_email: email,
-    otp_code: state.otp,
+    otp: state.otp,
     sim_name: 'CDO SIM 2 — Amazon'
   }).then(()=>{
     document.getElementById('otp-email-display').textContent = email;
