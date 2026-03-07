@@ -790,7 +790,8 @@ function sendOTP(){
     to_name: name,
     to_email: email,
     otp: state.otp,
-    sim_name: 'CDO SIM 2 — Amazon'
+    sim_name: 'CDO SIM 2 — Amazon',
+    message: `Hi ${name},\n\nYour CXO Simulabs verification code for CDO SIM 2 (Amazon) is:\n\n${state.otp}\n\nThis code expires in 5 minutes. Do not share it with anyone.\n\n— CXO Simulabs Team\ncxosimulabs.com`
   }).then(()=>{
     document.getElementById('otp-email-display').textContent = email;
     showPhase('otp');
